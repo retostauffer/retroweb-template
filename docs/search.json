@@ -39,7 +39,7 @@
     "href": "index.html#block-carousel-shortcode",
     "title": "website",
     "section": "Block-carousel shortcode",
-    "text": "Block-carousel shortcode\n{{< blockcarousel [image1] [image2] ... id = [elementId] >}} allows to create block carousels within the content of the page. Currently no additional support for options (TODO(R)).\n\n                    Previous            Next"
+    "text": "Block-carousel shortcode\n{{< blockcarousel [image1] [image2] ... id=[elementId] >}} allows to create block carousels within the content of the page. Currently no additional support for options (TODO(R)).\n\n                  Previous            Next"
   },
   {
     "objectID": "index.html#heading-2",
