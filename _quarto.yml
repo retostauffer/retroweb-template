@@ -14,8 +14,17 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - text: Features
+        menu:
+          - href: webheader.qmd
+          - href: blockcarousel.qmd
+          - href: jquery.qmd
       - href: blog.qmd
         text: Blog
+      - href: titleblocks.qmd
+        text: To fix
+
+    right:
       - href: about.qmd
         text: About
   page-footer:
@@ -52,4 +61,11 @@ twitter-card:
   - card-style: summary
   - creator: "@retostauffer"
   - site: https://github.com/retostauffer/retroweb-template
+
+open-graph:
+  - title: Retroweb - Quarto Website Theme
+  - description: Template for Quarto-based website with the Retroweb theme!
+  - image: assets/logo-retroweb.svg
+  - locale: en_US
+
 

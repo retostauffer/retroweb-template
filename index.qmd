@@ -1,5 +1,10 @@
 ---
-title: "website"
+title: Retroweb Quarto Theme Template & Demo
+
+margin-header: |
+    ![](assets/logo-retroweb-black.svg)
+
+title-block-banner: false
 
 webheader:
     type: carousel
@@ -35,15 +40,14 @@ webheader:
 This is the demo of the rendered [Retroweb template](rwt), a 
 [Quarto](quarto) websites using the [Retroweb](rwe) theme extension.
 
+## Features provided
 
-:::: {.grid}
-::: {.g-col-3}
-Grid column width 3.
-:::
-::: {.g-col-9}
-Grid column width 9.
-:::
-::::
+* [jQuery](jquery.qmd): Adds additional jQuery support.
+* [Webheader](webheader.qmd): Allows to add images, random images, and
+    sequences of auto-rotating images to the header of the page.
+* [Block carousel](blockcarousel.qmd): Allows to add in-line image
+    carousels.
+
 
 ## Getting started
 
@@ -66,15 +70,6 @@ quarto render
 The website will be rendered into `docs/`.
 
 
-## Block-carousel shortcode
-
-`{{{< blockcarousel [image1] [image2] ... id=[elementId] >}}}` allows to create block
-carousels within the content of the page. Currently no additional support for
-options (TODO(R)).
-
-<!-- bootstrap 5 image carousel -->
-{{< blockcarousel header-images/unsplash-1.jpg header-images/unsplash-2.jpg id="block_carousel_1" >}}
-
 # Just some stuff, tbd.
 
 # Heading 1
@@ -88,10 +83,18 @@ options (TODO(R)).
 
 Accessing information from `_variables.yml`: {{< var name >}}.
 
-
-::: {.red}
-adsfadsf
+:::: {.grid}
+::: {.g-col-3}
+Grid column width 3.
 :::
+::: {.g-col-9}
+Grid column width 9.
+:::
+::::
+
+
+
+
 
 
 [quarto]: https://quarto.org/docs/reference/projects/websites.html

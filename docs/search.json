@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "jquery.html",
+    "href": "jquery.html",
+    "title": "jQuery",
+    "section": "",
+    "text": "The Retroweb theme adds jQuery support. To avoid cross-site includes - which would require user consent due to the European GDPR - a ‘frozen’ version of jQuery is shipped with the Retroweb extension. Currently jQuery 3.6.0 is included (see here)."
+  },
+  {
     "objectID": "posts/welcome/index.html",
     "href": "posts/welcome/index.html",
     "title": "Welcome To My Blog",
@@ -14,6 +21,13 @@
     "text": "This is a post with executable code."
   },
   {
+    "objectID": "webheader.html",
+    "href": "webheader.html",
+    "title": "Webheader",
+    "section": "",
+    "text": "Retoweb adds additional functionality to control the header of the website (thus, webheader). Two different types are available: image or carousel.\nThe index page of the template shows a series of variations for type: carousel. The webheader can be defined in the yml header of the individual .qmd.\n\n\n\n\n\n\nInfo\n\n\n\nNote that the images must be located in header-images/ (or any other folder defined as resources in _quarto.yml).\n\n\nExample 1: A simple rotating header with two images without additional image options specified. The interval time for auto rotation is set to 2 seconds.\nwebheader:\n    type: carousel\n    options:\n        interval: 2000\n    images:\n        - image: header-images/unsplash-1.jpg\n        - image: header-images/unsplash-2.jpg\nExample 2: Rotating carousel-type header with two images, whereof the first makes use of all available image options. The second solely includes an alternative text which is included in the HTML but does not change the appearance.\nwebheader:\n    type: carousel\n    options:\n        interval: 2000\n    images:\n        - image: header-images/unsplash-1.jpg\n          title: \"Image number one.\"\n          description: \"Full header with icon, title, description, and background color.\"\n          alt: Page header showing the websites logo on top of an artistic blueish background.\n          bg: \"rgba(255, 255, 255, 0.2)\"\n          icon: assets/logo-retroweb-white.svg\n\n        - image: header-images/unsplash-2.jpg\n          alt: Page header image for design purposes.\nExample 3: Static header image. As only one image is provided, the page will always show the image as defined.\nwebheader:\n    type: image\n    images:\n        - image: header-images/unsplash-1.jpg\nExample 4: Static but random header image. Each time the page is loaded one (randomly selected) image among the ones defined will be displayed. The [about][about.qmd] page shows how this looks like.\nwebheader:\n    type: image\n    images:\n        - image: header-images/unsplash-1.jpg\n        - image: header-images/unsplash-2.jpg\n        - image: header-images/unsplash-3.jpg\n        - image: header-images/unsplash-4.jpg\n\n\nThe two types available are:\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\ncarousel\nseries of rotating images. Allows for additional styling (see [below])\n\n\nimage\nsingle or random image (static)\n\n\n\n\n\n\nDefined under options. For now, only the interval (for automated carousel rotation) can be defined.\n\n\n\n\n\n\n\nOption\nDescription\n\n\n\n\ninterval\nPositive integer, rotation-interval in milliseconds. Defaults to 4000 if not specified.\n\n\n\n\n\n\nThe following options are available to define an image. All besides image are optional and affect the way the image(s) are displayed.\n\n\n\n\n\n\n\nOption\nDescription\n\n\n\n\nimage\nName/path of the header image. If not specified it will simply be ignored.\n\n\ntitle\nTitle to be displayed.\n\n\ndescription\nDescription to be displayed.\n\n\nalt\nAlternative information added to the image.\n\n\nbg\nBackground color, any valid css definition (e.g., red, #fff, rgba(100, 100, 100, 0.3)).\n\n\nicon\nName/path of an icon/image to be displayed on top of the header image.\n\n\n\n\n\n\n\n\n\nFeatures for type: image\n\n\n\nDoes not yet provide the optional arguments like title, description, alt, bg, or icon but will be added (TODO(R))."
+  },
+  {
     "objectID": "blog.html",
     "href": "blog.html",
     "title": "myblog",
@@ -21,32 +35,46 @@
     "text": "news\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nAug 18, 2022\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 15, 2022\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
   },
   {
+    "objectID": "blockcarousel.html",
+    "href": "blockcarousel.html",
+    "title": "Block Carousel",
+    "section": "",
+    "text": "Retroweb provides a shortcode to create in-line block image slideshows (or block carousels). The shortcode {{< blockcarousel >}} takes up a series of images to be displayed. In addition, the argument id=[elementId] can be set to add a unique user defined HTML element ID to the carousel. If not specified, a random ID is added.\n{{< blockcarousel [image1] [image2] ... id=[elementId] >}}\n\n\nThe following two shortcodes create the carousels displayed below:\n{{< blockcarousel header-images/unsplash-1.jpg header-images/unsplash-2.jpg id=\"block_carousel1\" >}}\n{{< blockcarousel header-images/unsplash-3.jpg header-images/unsplash-4.jpg header-images/unsplash-5.jpg >}}\n… creates the carousel shown below. The images are cycled automatically but can be navigated trough using the two buttons shown on the right/left of the image or via swiping.\n                  Previous            Next  \n                    Previous            Next  \n\n\n\n\n\n\nAdditional control arguments\n\n\n\nCurrently there are no additonal options to control the behaviour of the carousel but might be added in the future (see carousel options)."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "website",
+    "title": "Retroweb Quarto Theme Template & Demo",
     "section": "",
     "text": "This is the demo of the rendered Retroweb template, a Quarto websites using the Retroweb theme extension."
   },
   {
+    "objectID": "index.html#features-provided",
+    "href": "index.html#features-provided",
+    "title": "Retroweb Quarto Theme Template & Demo",
+    "section": "Features provided",
+    "text": "Features provided\n\njQuery: Adds additional jQuery support.\nWebheader: Allows to add images, random images, and sequences of auto-rotating images to the header of the page.\nBlock carousel: Allows to add in-line image carousels."
+  },
+  {
     "objectID": "index.html#getting-started",
     "href": "index.html#getting-started",
-    "title": "website",
+    "title": "Retroweb Quarto Theme Template & Demo",
     "section": "Getting started",
     "text": "Getting started\nTo get started we need to clone the template repository as well as cloning the quarto extension which contains the Retroweb extension.\ngit clone https://github.com/retostauffer/retroweb-template.git mywebsite\ncd mywebsite\ngit submodule add https://github.com/retostauffer/retroweb-ext.git _extensions/retroweb\nWhen cloned, the extension can be installed and the page rendered.\nquarto install extension .\nquarto render\nThe website will be rendered into docs/."
   },
   {
-    "objectID": "index.html#block-carousel-shortcode",
-    "href": "index.html#block-carousel-shortcode",
-    "title": "website",
-    "section": "Block-carousel shortcode",
-    "text": "Block-carousel shortcode\n{{< blockcarousel [image1] [image2] ... id=[elementId] >}} allows to create block carousels within the content of the page. Currently no additional support for options (TODO(R)).\n\n                  Previous            Next"
-  },
-  {
     "objectID": "index.html#heading-2",
     "href": "index.html#heading-2",
-    "title": "website",
+    "title": "Retroweb Quarto Theme Template & Demo",
     "section": "Heading 2",
-    "text": "Heading 2\n\nHeading 3\n\nHeading 4\nAccessing information from _variables.yml: Reto.\n\nadsfadsf"
+    "text": "Heading 2\n\nHeading 3\n\nHeading 4\nAccessing information from _variables.yml: Reto.\n\n\nGrid column width 3.\n\n\nGrid column width 9."
+  },
+  {
+    "objectID": "titleblocks.html",
+    "href": "titleblocks.html",
+    "title": "Title blocks",
+    "section": "",
+    "text": "Currently my theming interferes with quartos Title Blocks (TODO(R))."
   },
   {
     "objectID": "about.html",

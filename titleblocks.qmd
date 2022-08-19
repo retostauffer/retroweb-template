@@ -1,0 +1,17 @@
+---
+title: Title blocks
+
+title-block-banner: header-images/unsplash-1.jpg
+title-block-banner-color: yellow
+author: Reto Stauffer
+affiliation: Universität Innsbruck
+
+webheader:
+    type: image
+    images:
+        - image: header-images/unsplash-2.jpg
+---
+
+
+Currently my theming interferes with quartos
+[Title Blocks](https://quarto.org/docs/authoring/title-blocks.html) (TODO(R)).

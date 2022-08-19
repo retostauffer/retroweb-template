@@ -1,0 +1,22 @@
+---
+title: "jQuery"
+
+webheader:
+    type: image
+    images:
+        - image: header-images/unsplash-4.jpg
+          alt: Header image for design purposes.
+---
+
+
+## jQuery support
+
+The _Retroweb_ theme adds [jQuery][jquery] support. To avoid cross-site
+includes - which would require user consent due to the European GDPR - a
+'frozen' version of jQuery is shipped with the [_Retroweb_][rwe] extension.
+Currently jQuery `3.6.0` is included (see [here][assets]).
+
+
+[jquery]: https://jquery.com
+[rwe]: https://github.com/retostauffer/retroweb-ext
+[assets]: https://github.com/retostauffer/retroweb-ext/tree/main/assets
