@@ -1,0 +1,10 @@
+
+
+
+/_site
+/_files
+/_extensions/*
+*.swp
+
+/.quarto/
+

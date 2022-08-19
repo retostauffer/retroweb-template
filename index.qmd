@@ -1,0 +1,33 @@
+---
+title: "website"
+
+webheader:
+    type: carousel
+    # currently only allows to set the interval; default is 2000ms
+    options:
+        interval: 3000
+    images:
+        - image: images/header-unsplash-1.jpg
+          alt: just an image
+          caption: "Image number one."
+        - image: images/header-unsplash-2.jpg
+          alt: another image
+          caption: "Image number two."
+        - image: images/header-unsplash-3.jpg
+          alt: another image
+          caption: "Image number three."
+---
+
+This is a Quarto website.
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+{{< var name >}}
+
+<!-- bootstrap 5 image carousel -->
+{{< blockcarousel images/header-unsplash-1.jpg images/header-unsplash-2.jpg id="fooCarousel" >}}
+
+
+::: {.red}
+adsfadsf
+:::

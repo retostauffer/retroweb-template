@@ -1,0 +1,42 @@
+project:
+  type: website
+
+website:
+  title: Retroweb
+  page-navigation: true
+  navbar:
+    pinned: false
+    logo: assets/logo-retroweb.svg
+    left:
+      - href: index.qmd
+        text: Home
+      - href: blog.qmd
+        text: Blog
+      - href: about.qmd
+        text: About
+  page-footer:
+    left:
+      - text: About the site
+      - text: About
+        href: about.qmd
+      - text: Blog
+        href: blog.qmd
+    center:
+      - text: External
+      - text: google
+        href: https://www.google.com
+    right:
+      - text: Social
+      - icon: github
+        href: https://github.com/
+      - icon: twitter
+        href: https://twitter.com/
+
+resources:
+  - images
+  - assets
+
+format:
+  retroweb-html:
+    date: 2022-08-17
+
