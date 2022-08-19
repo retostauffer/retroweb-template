@@ -74,13 +74,13 @@
     "href": "titleblocks.html",
     "title": "Title blocks",
     "section": "",
-    "text": "However, wehn no webheader is specified, the default title blocks behaviour defaults to the standard behaviour."
+    "text": "If no webheader is specified, Quartos title blocks behaviour is preserved.\nExample: The page (titleblocks.qmd) you are looking at uses the following configuration:\ntitle-block-banner: header-images/unsplash-1.jpg\ntitle-block-banner-color: yellow\nauthor: Reto Stauffer\naffiliation: Universität Innsbruck\n\nwebheader:\n    type: image\n    #type: carousel\n    images:\n        - image: header-images/unsplash-2.jpg\n        - image: header-images/unsplash-3.jpg\nThe webheader type: image definition overwrites the default title-block-* behaviour, thus the page shows a (random) static image at the top. Check out the dedicated web header manual for more details"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Why Rotorweb?\nThe theme name Rotorweb was chosen as it resembles many different aspects of why this theme has been created and who created it.\nOne of the main goal was to develop a Quarto theme which allows us to replace existing websites built with the jekyll. One of the features missing were the ‘rotating header images’, one of the main reasons for the name Rotorweb.\nIn addition, R is the first letter of the first name of the authors and one of his preferred programming languages: R.\nQuarto helps to ‘lift’ and raise dynamic documents to the next level using quarto to create websites, presentations, exercises and documents using R, Python and Julia."
+    "text": "Why Rotorweb?\nThe theme name Rotorweb has been chosen as it resembles many different aspects of why this theme has been created and who created it.\nOne of the main goal was to develop a Quarto website theme which allows us to replace existing sites. One of the features missing were the ‘rotating header images’, thus the name Rotorweb.\nIn addition, R is the first letter of the first name of the authors first name and one of his preferred programming languages: R.\nMoreover, migrating to Quarto for most dynamic documents allows to ‘lift’ efficiency (and simplicity) to the next level as we can now streamline the creation of websites, presentations, exercises and documents using one single framework combining written documents, but also documents using code execution in R, Python and Julia."
   }
 ]

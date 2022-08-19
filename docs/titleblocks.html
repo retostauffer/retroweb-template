@@ -194,10 +194,10 @@ var rotorweb_webheader_options = {interval: 4000}
 
 
 <meta property="og:title" content="Rotorweb - Title blocks">
-<meta property="og:description" content="Rotorwebs [web header][webheader.qmd] feature overrules quarto title blocks. in case a title-block-banner is set alongside with a webheader definition.">
+<meta property="og:description" content="Rotorwebs web header feature overrules quarto title blocks in cases where a title-block-banner is set alongside with a webheader definition.">
 <meta property="og:site-name" content="Rotorweb">
 <meta name="twitter:title" content="Rotorweb - Title blocks">
-<meta name="twitter:description" content="Rotorwebs [web header][webheader.qmd] feature overrules quarto title blocks. in case a title-block-banner is set alongside with a webheader definition.">
+<meta name="twitter:description" content="Rotorwebs web header feature overrules quarto title blocks in cases where a title-block-banner is set alongside with a webheader definition.">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -292,8 +292,21 @@ var rotorweb_webheader_options = {interval: 4000}
 
 
 
-<p>Rotorwebs [web header][webheader.qmd] feature overrules quarto <a href="https://quarto.org/docs/authoring/title-blocks.html">title blocks</a>. in case a <code>title-block-banner</code> is set alongside with a <code>webheader</code> definition.</p>
-<p>However, wehn no <a href="./webheader.html"><code>webheader</code></a> is specified, the default <a href="https://quarto.org/docs/authoring/title-blocks.html">title blocks</a> behaviour defaults to the standard behaviour.</p>
+<p>Rotorwebs <a href="./webheader.html">web header</a> feature overrules quarto <a href="https://quarto.org/docs/authoring/title-blocks.html">title blocks</a> in cases where a <code>title-block-banner</code> is set alongside with a <code>webheader</code> definition.</p>
+<p>If no <a href="./webheader.html"><code>webheader</code></a> is specified, <a href="?var:link.quarto">Quarto</a>s <a href="https://quarto.org/docs/authoring/title-blocks.html">title blocks</a> behaviour is preserved.</p>
+<p><strong>Example:</strong> The page (<code>titleblocks.qmd</code>) you are looking at uses the following configuration:</p>
+<pre><code>title-block-banner: header-images/unsplash-1.jpg
+title-block-banner-color: yellow
+author: Reto Stauffer
+affiliation: Universität Innsbruck
+
+webheader:
+    type: image
+    #type: carousel
+    images:
+        - image: header-images/unsplash-2.jpg
+        - image: header-images/unsplash-3.jpg</code></pre>
+<p>The <code>webheader</code> <code>type: image</code> definition overwrites the default <code>title-block-*</code> behaviour, thus the page shows a (random) static image at the top. Check out the dedicated <a href="./webheader.html">web header</a> manual for more details</p>
 
 
 

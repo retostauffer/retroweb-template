@@ -15,10 +15,31 @@ webheader:
 ---
 
 
-{{< var theme.name >}}s [web header][webheader.qmd] feature overrules
-quarto [title blocks](https://quarto.org/docs/authoring/title-blocks.html).
-in case a `title-block-banner` is set alongside with a `webheader` definition.
+{{< var theme.name >}}s [web header](webheader.qmd) feature overrules
+quarto [title blocks](https://quarto.org/docs/authoring/title-blocks.html)
+in cases where a `title-block-banner` is set alongside with a `webheader` definition.
 
-However, wehn no [`webheader`](webheader.qmd) is specified, the default
+If no [`webheader`](webheader.qmd) is specified, [Quarto]({{< var link.quarto >}})s
 [title blocks](https://quarto.org/docs/authoring/title-blocks.html) behaviour
-defaults to the standard behaviour.
+is preserved.
+
+**Example:** The page (`titleblocks.qmd`) you are looking at uses the following
+configuration:
+
+```
+title-block-banner: header-images/unsplash-1.jpg
+title-block-banner-color: yellow
+author: Reto Stauffer
+affiliation: Universität Innsbruck
+
+webheader:
+    type: image
+    #type: carousel
+    images:
+        - image: header-images/unsplash-2.jpg
+        - image: header-images/unsplash-3.jpg
+```
+
+The `webheader` `type: image` definition overwrites the default `title-block-*`
+behaviour, thus the page shows a (random) static image at the top. Check out
+the dedicated [web header](webheader.qmd) manual for more details
