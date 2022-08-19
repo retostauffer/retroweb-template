@@ -11,13 +11,13 @@ webheader:
 
 ## Web header
 
-_Retoweb_ adds additional functionality to control
-the header of the website (thus, webheader). Two 
-different types are available: `image` or `carousel`.
+_Retoweb_ adds additional functionality to control the header of the website
+(thus, webheader). Two different types are available: `image` or `carousel`.
+When set, this will overrule quartos [title blocks](https://quarto.org/docs/authoring/title-blocks.html).
 
-The [index](index.qmd) page of the template shows
-a series of variations for `type: carousel`. The webheader
-can be defined in the yml header of the individual `.qmd`.
+The [index](index.qmd) page of the template shows a series of variations for
+`type: carousel`. The webheader can be defined in the yml header of the
+individual `.qmd`.
 
 ::: {.callout-info}
 Note that the images must be located in `header-images/` (or any
@@ -54,7 +54,7 @@ webheader:
           description: "Full header with icon, title, description, and background color."
           alt: Page header showing the websites logo on top of an artistic blueish background.
           bg: "rgba(255, 255, 255, 0.2)"
-          icon: assets/logo-retroweb-white.svg
+          icon: assets/logo-rotorweb-white.svg
 
         - image: header-images/unsplash-2.jpg
           alt: Page header image for design purposes.

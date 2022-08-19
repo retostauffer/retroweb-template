@@ -1,8 +1,8 @@
 ---
-title: Retroweb Quarto Theme Template & Demo
+title: Rotorweb Template & Demo
 
 margin-header: |
-    ![](assets/logo-retroweb-black.svg)
+    ![](assets/logo-rotorweb-black.svg)
 
 title-block-banner: false
 
@@ -17,7 +17,7 @@ webheader:
           description: "Full header with icon, title, description, and background color."
           alt: Page header showing the websites logo on top of an artistic blueish background.
           bg: "rgba(255, 255, 255, 0.2)"
-          icon: assets/logo-retroweb-white.svg
+          icon: assets/logo-rotorweb-white.svg
 
         - image: header-images/unsplash-2.jpg
           title: "Second image with title, description, light background, without an icon."
@@ -37,27 +37,30 @@ webheader:
 ---
 
 
-This is the demo of the rendered [Retroweb template](rwt), a 
-[Quarto](quarto) websites using the [Retroweb](rwe) theme extension.
+This is the demo of the rendered
+{{< var theme.name >}} [template]({{< var links.rotorweb-template >}})
+a [Quarto]({{< var links.quarto >}}) [websites]({{< var.links.quarto-websites >}})
+using the {{< var theme.name >}} [theme extension]({{ links.rotorweb-ext >}}).
 
 ## Features provided
 
 * [jQuery](jquery.qmd): Adds additional jQuery support.
 * [Webheader](webheader.qmd): Allows to add images, random images, and
-    sequences of auto-rotating images to the header of the page.
+  sequences of auto-rotating images to the header of the page.
 * [Block carousel](blockcarousel.qmd): Allows to add in-line image
-    carousels.
+  carousels.
 
 
 ## Getting started
 
-To get started we need to clone the [template](wrt) repository as well
-as cloning the quarto extension which contains the [Retroweb](wre) extension.
+To get started we need to clone the [template]({{< var links.rotorweb-template >}})
+repository as well as cloning the quarto extension which contains the
+[{{< var theme.name >}}]({{< var links.rotorweb-ext >}}) extension.
 
 ```
-git clone https://github.com/retostauffer/retroweb-template.git mywebsite
+git clone https://github.com/retostauffer/rotorweb-template.git mywebsite
 cd mywebsite
-git submodule add https://github.com/retostauffer/retroweb-ext.git _extensions/retroweb
+git submodule add https://github.com/retostauffer/rotorweb-ext.git _extensions/rotorweb
 ```
 
 When cloned, the extension can be installed and the page rendered.
@@ -70,7 +73,7 @@ quarto render
 The website will be rendered into `docs/`.
 
 
-# Just some stuff, tbd.
+# Just some stuff; TODO(R)
 
 # Heading 1
 
@@ -79,9 +82,6 @@ The website will be rendered into `docs/`.
 ### Heading 3
 
 #### Heading 4
-
-
-Accessing information from `_variables.yml`: {{< var name >}}.
 
 :::: {.grid}
 ::: {.g-col-3}
@@ -97,6 +97,3 @@ Grid column width 9.
 
 
 
-[quarto]: https://quarto.org/docs/reference/projects/websites.html
-[rwt]: https://github.com/retostauffer/retroweb-template
-[rwe]: https://quarto.org/docs/reference/projects/websites.html

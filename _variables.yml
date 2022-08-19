@@ -1,4 +1,17 @@
 
+theme:
+  name: "Rotorweb"
+  version: 0.0.5
+links:
+  rotorweb-ext: https://github.com/retostauffer/rotorweb-ext
+  rotorweb-template: https://github.com/retostauffer/rotorweb-template
+  quarto-websites: https://quarto.org/docs/reference/projects/websites.html
+  quarto: https://quarto.org/
+  jquery: https://jquery.com/
+  r: https://r-project.org/
+  python: https://www.python.org
+  julia: https://julialang.org/
+  statistik: https://uibk.ac.at/statistik
+  disc: https://uibk.ac.at/disc
+  uibk: https://uibk.ac.at
 
-
-name: Reto

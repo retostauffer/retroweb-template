@@ -11,7 +11,7 @@ webheader:
 
 ## Block carousel
 
-_Retroweb_ provides a shortcode to create in-line block image
+{{< var theme.name >}}  provides a shortcode to create in-line block image
 slideshows (or block carousels). The shortcode `{{{< blockcarousel >}}}`
 takes up a series of images to be displayed. In addition, the
 argument `id=[elementId]` can be set to add a unique user defined HTML element ID to

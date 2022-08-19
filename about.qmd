@@ -17,6 +17,40 @@ webheader:
           caption: "Image number three."
 ---
 
-About this site
 
+### Author
+
+
++:----------------------+:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Name                  | Reto Stauffer                                                                                                                                                          |
++:----------------------+:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Affiliation           | [Department of Statistics]({{< var links.statistik >}}) and [Digital Science Center]({{< var links.disc >}}), [Universität Innsbruck]({{< var links.uibk >}}), Austria |
++:----------------------+:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Website               | <https://retostauffer.org>                                                                                                                                             |
++-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Github                | <https://github.com/retostauffer>                                                                                                                                      |
++-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Twitter               | <https://twitter.com/retostauffer2>                                                                                                                                    |
++-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+<Reto.Stauffer@uibk.ac.at>
+
+### Why {{< var theme.name >}}?
+
+The theme name {{< var theme.name >}} was chosen as it resembles
+many different aspects of why this theme has been created and who created it.
+
+One of the main goal was to develop a [Quarto]({{< var links.quarto-websites >}}) theme
+which allows us to replace existing websites built with the [jekyll](https://jekyllrb.com/).
+One of the features missing were the '_rotating header images_', one of the main
+reasons for the name {{< var theme.name >}}.
+
+In addition, _R_ is the first letter of the first name of the authors and one of his
+preferred programming languages: [R]({{< var links.r >}}).
+
+[Quarto]({{< var links.quarto >}}) helps to 'lift' and raise dynamic documents
+to the next level using quarto to create websites, presentations, exercises and documents
+using [_R_]({{< var links.r }}), [Python]({{< var.links.python >}}) and
+[Julia]({{< var links.julia >}}).
 

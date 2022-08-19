@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2022-08-17">
 
-<title>Retroweb - About</title>
+<title>Rotorweb - About</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -56,17 +56,42 @@ ul.task-list{list-style: none;}
   }
 }</script>
 <script>
-var retroweb_webheader_images = [{image: 'header-images/unsplash-1.jpg', alt: 'just an image', title: null, description: null, icon: null, bg: null}, {image: 'header-images/unsplash-2.jpg', alt: 'another image', title: null, description: null, icon: null, bg: null}, {image: 'header-images/unsplash-3.jpg', alt: 'another image', title: null, description: null, icon: null, bg: null}, ];
-var retroweb_webheader_type = 'image'
-var retroweb_webheader_options = {interval: 4000}
+var rotorweb_webheader_images = [{image: 'header-images/unsplash-1.jpg', alt: 'just an image', title: null, description: null, icon: null, bg: null}, {image: 'header-images/unsplash-2.jpg', alt: 'another image', title: null, description: null, icon: null, bg: null}, {image: 'header-images/unsplash-3.jpg', alt: 'another image', title: null, description: null, icon: null, bg: null}, ];
+var rotorweb_webheader_type = 'image'
+var rotorweb_webheader_options = {interval: 4000}
 </script>
 <script>
 (function($) {
 
-    function retroweb_webheader_carousel() {
-        /* First: create new fluid container to palce the webheader */
-        var fluid = $("<div class='container-fluid webheader'></div>").insertBefore($("#quarto-content"));
-        var elemID = "retroweb_webheader_carousel"
+    /* If the user uses the quarto Title Block feature the
+     * element #title-block-header is a header element. If so,
+     * remove. Else do nothing.
+     * Rotorweb does this as it will add it's own header for the
+     * webheader feature. */
+    function remove_title_block_is_header() {
+       var tmp = $("#title-block-header");
+       var res = false // default
+       if ($(tmp).is("header")) {
+           res = true; $(tmp).remove()
+       }
+       return res;
+    }
+
+    /* Add custom <header> element with id #rotorweb-title-block-header
+     * for the webheader feature. For both, type: carousel and type: image.
+     * Returns the element added for further processing */
+    function add_webheader_header() {
+        return $("<header id='rotorweb-title-block-header' class='webheader'></header>").insertAfter("#quarto-header");
+    }
+
+    function rotorweb_webheader_carousel() {
+
+        /* See description of corresponding functions for details */
+        remove_title_block_is_header()
+        var target = add_webheader_header()
+
+        /* Append additional <header> to take up the rotorweb webheader */
+        var elemID = "rotorweb-webheader-carousel"
 
         /* Ensure that we only find it once? */
         var res = "<div id='" + elemID + "' class='carousel slide' data-ride='carousel'>\n"
@@ -81,12 +106,11 @@ var retroweb_webheader_options = {interval: 4000}
                 + "  <span class='carousel-control-next-icon' aria-hidden='true'></span>"
                 + "</button>"
 
-        $(res).appendTo(fluid)
+        $(res).appendTo(target)
         $(nav).appendTo("#" + elemID)
         var inner = $("#" + elemID).find(".carousel-inner");
         var ind   = $("<civ class='carousel-indicators'></div>").insertBefore(inner);
-        $.each($(retroweb_webheader_images), function(k, rec) {
-
+        $.each($(rotorweb_webheader_images), function(k, rec) {
             /* adding image (carousel-item) */
             var tmp = $("<div class='carousel-item'>").appendTo(inner);
             var img = $("<img class='d-block w-100' src='" + rec["image"] + "'>").appendTo(tmp)
@@ -130,39 +154,42 @@ var retroweb_webheader_options = {interval: 4000}
         $("#" + elemID + " .carousel-indicators button:first").addClass("active")
 
 
-        $("#" + elemID).carousel({interval: retroweb_webheader_options["interval"]}).carousel("cycle")
+        $("#" + elemID).carousel({interval: rotorweb_webheader_options["interval"]}).carousel("cycle")
     }
 
-    function retroweb_webheader_image() {
+    function rotorweb_webheader_image() {
+
+        /* See description of corresponding functions for details */
+        remove_title_block_is_header()
+        add_webheader_header()
+
         /* First: create new fluid container to palce the webheader */
-        var elemID = "retroweb_webheader_image";
+        var elemID = "rotorweb-webheader-image";
         var fluid  = $("<div id='" + elemID + "' class='container-fluid webheader'></div>").insertBefore($("#quarto-content"));
         /* If there are multiple images defined: take random one */
-        var idx = parseInt(Math.random() * retroweb_webheader_images.length);
+        var idx = parseInt(Math.random() * rotorweb_webheader_images.length);
 
-        $("<img id='" + elemID + "' class = 'img-contained' src='" + retroweb_webheader_images[idx].image + "'>").appendTo(fluid)
-        console.log(idx)
-        console.log(retroweb_webheader_images)
+        $("<img id='" + elemID + "' class = 'img-contained' src='" + rotorweb_webheader_images[idx].image + "'></img>").appendTo(fluid)
     }
 
 
     $(document).ready(function() {
-            console.log(retroweb_webheader_type)
-        if (retroweb_webheader_type == "carousel") {
-            retroweb_webheader_carousel()
-        } else if (retroweb_webheader_type == "image") {
-            retroweb_webheader_image()
+            console.log(rotorweb_webheader_type)
+        if (rotorweb_webheader_type == "carousel") {
+            rotorweb_webheader_carousel()
+        } else if (rotorweb_webheader_type == "image") {
+            rotorweb_webheader_image()
         }
     });
 })(jQuery);
 </script>
 
 
-<meta property="og:title" content="Retroweb - About">
-<meta property="og:description" content="About this site">
-<meta property="og:site-name" content="Retroweb">
-<meta name="twitter:title" content="Retroweb - About">
-<meta name="twitter:description" content="About this site">
+<meta property="og:title" content="Rotorweb - About">
+<meta property="og:description" content="Reto.Stauffer@uibk.ac.at">
+<meta property="og:site-name" content="Rotorweb">
+<meta name="twitter:title" content="Rotorweb - About">
+<meta name="twitter:description" content="Reto.Stauffer@uibk.ac.at">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -173,8 +200,8 @@ var retroweb_webheader_options = {interval: 4000}
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <a class="navbar-brand" href="./index.html">
-    <img src="./assets/logo-retroweb-black.svg" alt="">
-    <span class="navbar-title">Retroweb</span>
+    <img src="./assets/logo-rotorweb-black.svg" alt="">
+    <span class="navbar-title">Rotorweb</span>
   </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
@@ -192,6 +219,10 @@ var retroweb_webheader_options = {interval: 4000}
  <span class="dropdown-text">Webheader</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="./titleblocks.html">
+ <span class="dropdown-text">Title blocks</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="./blockcarousel.html">
  <span class="dropdown-text">Block Carousel</span></a>
   </li>  
@@ -203,9 +234,6 @@ var retroweb_webheader_options = {interval: 4000}
   </li>
   <li class="nav-item">
     <a class="nav-link" href="./blog.html">Blog</a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./titleblocks.html">To fix</a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -248,9 +276,43 @@ var retroweb_webheader_options = {interval: 4000}
 
 </header>
 
-<p>About this site</p>
+<section id="author" class="level3">
+<h3 class="anchored" data-anchor-id="author">Author</h3>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Name</td>
+<td style="text-align: left;">Reto Stauffer</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Affiliation</td>
+<td style="text-align: left;"><a href="https://uibk.ac.at/statistik">Department of Statistics</a> and <a href="https://uibk.ac.at/disc">Digital Science Center</a>, <a href="https://uibk.ac.at">Universität Innsbruck</a>, Austria</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Website</td>
+<td style="text-align: left;"><a href="https://retostauffer.org" class="uri">https://retostauffer.org</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Github</td>
+<td style="text-align: left;"><a href="https://github.com/retostauffer" class="uri">https://github.com/retostauffer</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Twitter</td>
+<td style="text-align: left;"><a href="https://twitter.com/retostauffer2" class="uri">https://twitter.com/retostauffer2</a></td>
+</tr>
+</tbody>
+</table>
+<p><a href="mailto:Reto.Stauffer@uibk.ac.at" class="email">Reto.Stauffer@uibk.ac.at</a></p>
+</section>
+<section id="why-var-theme.name" class="level3">
+<h3 class="anchored" data-anchor-id="why-var-theme.name">Why Rotorweb?</h3>
+<p>The theme name Rotorweb was chosen as it resembles many different aspects of why this theme has been created and who created it.</p>
+<p>One of the main goal was to develop a <a href="https://quarto.org/docs/reference/projects/websites.html">Quarto</a> theme which allows us to replace existing websites built with the <a href="https://jekyllrb.com/">jekyll</a>. One of the features missing were the ‘<em>rotating header images</em>’, one of the main reasons for the name Rotorweb.</p>
+<p>In addition, <em>R</em> is the first letter of the first name of the authors and one of his preferred programming languages: <a href="https://r-project.org/">R</a>.</p>
+<p><a href="https://quarto.org/">Quarto</a> helps to ‘lift’ and raise dynamic documents to the next level using quarto to create websites, presentations, exercises and documents using <a href="%7B%7B%3C%20var%20links.r%20%7D%7D"><em>R</em></a>, <a href="">Python</a> and <a href="https://julialang.org/">Julia</a>.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

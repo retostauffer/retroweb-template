@@ -8,10 +8,17 @@ affiliation: Universität Innsbruck
 
 webheader:
     type: image
+    #type: carousel
     images:
         - image: header-images/unsplash-2.jpg
+        - image: header-images/unsplash-3.jpg
 ---
 
 
-Currently my theming interferes with quartos
-[Title Blocks](https://quarto.org/docs/authoring/title-blocks.html) (TODO(R)).
+{{< var theme.name >}}s [web header][webheader.qmd] feature overrules
+quarto [title blocks](https://quarto.org/docs/authoring/title-blocks.html).
+in case a `title-block-banner` is set alongside with a `webheader` definition.
+
+However, wehn no [`webheader`](webheader.qmd) is specified, the default
+[title blocks](https://quarto.org/docs/authoring/title-blocks.html) behaviour
+defaults to the standard behaviour.

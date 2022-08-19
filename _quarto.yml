@@ -3,26 +3,25 @@ project:
   output-dir: docs
 
 website:
-  title: Retroweb
+  title: Rotorweb
   page-navigation: true
-  repo-url: https://github.com/retostauffer/retroweb-template
+  repo-url: https://github.com/retostauffer/rotorweb-template
   repo-branch: main
   repo-actions: issue
   navbar:
     pinned: false
-    logo: assets/logo-retroweb-black.svg
+    logo: assets/logo-rotorweb-black.svg
     left:
       - href: index.qmd
         text: Home
       - text: Features
         menu:
           - href: webheader.qmd
+          - href: titleblocks.qmd
           - href: blockcarousel.qmd
           - href: jquery.qmd
       - href: blog.qmd
         text: Blog
-      - href: titleblocks.qmd
-        text: To fix
 
     right:
       - href: about.qmd
@@ -50,22 +49,22 @@ resources:
   - header-images
 
 format:
-  retroweb-html:
+  rotorweb-html:
     date: 2022-08-17
 
 twitter-card:
-  - title: Retroweb - Quarto Website Theme
-  - description: Template for Quarto-based website with the Retroweb theme!
-  - image: assets/logo-retroweb.svg
-  - image-alt: "Retroweb logo image"
+  - title: Rotorweb - Quarto Website Theme
+  - description: Template for Quarto-based website with the Rotorweb theme!
+  - image: assets/logo-rotorweb.svg
+  - image-alt: "Rotorweb logo image"
   - card-style: summary
   - creator: "@retostauffer"
-  - site: https://github.com/retostauffer/retroweb-template
+  - site: https://github.com/retostauffer/rotorweb-template
 
 open-graph:
-  - title: Retroweb - Quarto Website Theme
-  - description: Template for Quarto-based website with the Retroweb theme!
-  - image: assets/logo-retroweb.svg
+  - title: Rotorweb - Quarto Website Theme
+  - description: Template for Quarto-based website with the Rotorweb theme!
+  - image: assets/logo-rotorweb.svg
   - locale: en_US
 
 

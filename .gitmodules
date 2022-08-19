@@ -1,3 +1,3 @@
-[submodule "_extensions/retroweb"]
-	path = _extensions/retroweb
-	url = https://github.com/retostauffer/retroweb-ext
+[submodule "_extensions/rotorweb"]
+	path = _extensions/rotorweb
+	url = https://github.com/retostauffer/rotorweb-ext.git

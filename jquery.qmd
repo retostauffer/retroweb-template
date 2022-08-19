@@ -11,12 +11,11 @@ webheader:
 
 ## jQuery support
 
-The _Retroweb_ theme adds [jQuery][jquery] support. To avoid cross-site
-includes - which would require user consent due to the European GDPR - a
-'frozen' version of jQuery is shipped with the [_Retroweb_][rwe] extension.
-Currently jQuery `3.6.0` is included (see [here][assets]).
+The {{< var theme.name >}} theme adds [jQuery]({{< var links.jquery >}}) support.
+To avoid cross-site loading - which would require user consent due to the European GDPR - a
+'frozen' version of jQuery is shipped with the
+[{{< var theme.name >}}]({{< var links.rotorweb-ext >}}) extension.
+Currently jQuery `3.6.0` is included
+(see [github](https://github.com/retostauffer/rotorweb-ext/tree/main/assets)).
 
 
-[jquery]: https://jquery.com
-[rwe]: https://github.com/retostauffer/retroweb-ext
-[assets]: https://github.com/retostauffer/retroweb-ext/tree/main/assets

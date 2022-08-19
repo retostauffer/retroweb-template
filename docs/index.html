@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2022-08-17">
 
-<title>Retroweb - Retroweb Quarto Theme Template &amp; Demo</title>
+<title>Rotorweb - Rotorweb Template &amp; Demo</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -56,17 +56,42 @@ ul.task-list{list-style: none;}
   }
 }</script>
 <script>
-var retroweb_webheader_images = [{image: 'header-images/unsplash-1.jpg', alt: 'Page header showing the websites logo on top of an artistic blueish background.', title: 'Image number one.', description: 'Full header with icon, title, description, and background color.', icon: 'assets/logo-retroweb-white.svg', bg: 'rgba(255, 255, 255, 0.2)'}, {image: 'header-images/unsplash-2.jpg', alt: 'Page header image showing some stilized cubes in blueish color.', title: 'Second image with title, description, light background, without an icon.', description: 'This is just the caption', icon: null, bg: 'rgba(255, 255, 255, 0.1)'}, {image: 'header-images/unsplash-3.jpg', alt: 'Page header image showing a stylized keyboard in blueish color.', title: 'Image number three, title and background', description: null, icon: null, bg: 'rgba(255, 255, 255, 0.3)'}, {image: 'header-images/unsplash-4.jpg', alt: null, title: 'Seoncd last image: Title only', description: null, icon: null, bg: null}, {image: 'header-images/unsplash-5.jpg', alt: null, title: null, description: null, icon: null, bg: null}, ];
-var retroweb_webheader_type = 'carousel'
-var retroweb_webheader_options = {interval: 30000}
+var rotorweb_webheader_images = [{image: 'header-images/unsplash-1.jpg', alt: 'Page header showing the websites logo on top of an artistic blueish background.', title: 'Image number one.', description: 'Full header with icon, title, description, and background color.', icon: 'assets/logo-rotorweb-white.svg', bg: 'rgba(255, 255, 255, 0.2)'}, {image: 'header-images/unsplash-2.jpg', alt: 'Page header image showing some stilized cubes in blueish color.', title: 'Second image with title, description, light background, without an icon.', description: 'This is just the caption', icon: null, bg: 'rgba(255, 255, 255, 0.1)'}, {image: 'header-images/unsplash-3.jpg', alt: 'Page header image showing a stylized keyboard in blueish color.', title: 'Image number three, title and background', description: null, icon: null, bg: 'rgba(255, 255, 255, 0.3)'}, {image: 'header-images/unsplash-4.jpg', alt: null, title: 'Seoncd last image: Title only', description: null, icon: null, bg: null}, {image: 'header-images/unsplash-5.jpg', alt: null, title: null, description: null, icon: null, bg: null}, ];
+var rotorweb_webheader_type = 'carousel'
+var rotorweb_webheader_options = {interval: 30000}
 </script>
 <script>
 (function($) {
 
-    function retroweb_webheader_carousel() {
-        /* First: create new fluid container to palce the webheader */
-        var fluid = $("<div class='container-fluid webheader'></div>").insertBefore($("#quarto-content"));
-        var elemID = "retroweb_webheader_carousel"
+    /* If the user uses the quarto Title Block feature the
+     * element #title-block-header is a header element. If so,
+     * remove. Else do nothing.
+     * Rotorweb does this as it will add it's own header for the
+     * webheader feature. */
+    function remove_title_block_is_header() {
+       var tmp = $("#title-block-header");
+       var res = false // default
+       if ($(tmp).is("header")) {
+           res = true; $(tmp).remove()
+       }
+       return res;
+    }
+
+    /* Add custom <header> element with id #rotorweb-title-block-header
+     * for the webheader feature. For both, type: carousel and type: image.
+     * Returns the element added for further processing */
+    function add_webheader_header() {
+        return $("<header id='rotorweb-title-block-header' class='webheader'></header>").insertAfter("#quarto-header");
+    }
+
+    function rotorweb_webheader_carousel() {
+
+        /* See description of corresponding functions for details */
+        remove_title_block_is_header()
+        var target = add_webheader_header()
+
+        /* Append additional <header> to take up the rotorweb webheader */
+        var elemID = "rotorweb-webheader-carousel"
 
         /* Ensure that we only find it once? */
         var res = "<div id='" + elemID + "' class='carousel slide' data-ride='carousel'>\n"
@@ -81,12 +106,11 @@ var retroweb_webheader_options = {interval: 30000}
                 + "  <span class='carousel-control-next-icon' aria-hidden='true'></span>"
                 + "</button>"
 
-        $(res).appendTo(fluid)
+        $(res).appendTo(target)
         $(nav).appendTo("#" + elemID)
         var inner = $("#" + elemID).find(".carousel-inner");
         var ind   = $("<civ class='carousel-indicators'></div>").insertBefore(inner);
-        $.each($(retroweb_webheader_images), function(k, rec) {
-
+        $.each($(rotorweb_webheader_images), function(k, rec) {
             /* adding image (carousel-item) */
             var tmp = $("<div class='carousel-item'>").appendTo(inner);
             var img = $("<img class='d-block w-100' src='" + rec["image"] + "'>").appendTo(tmp)
@@ -130,39 +154,42 @@ var retroweb_webheader_options = {interval: 30000}
         $("#" + elemID + " .carousel-indicators button:first").addClass("active")
 
 
-        $("#" + elemID).carousel({interval: retroweb_webheader_options["interval"]}).carousel("cycle")
+        $("#" + elemID).carousel({interval: rotorweb_webheader_options["interval"]}).carousel("cycle")
     }
 
-    function retroweb_webheader_image() {
+    function rotorweb_webheader_image() {
+
+        /* See description of corresponding functions for details */
+        remove_title_block_is_header()
+        add_webheader_header()
+
         /* First: create new fluid container to palce the webheader */
-        var elemID = "retroweb_webheader_image";
+        var elemID = "rotorweb-webheader-image";
         var fluid  = $("<div id='" + elemID + "' class='container-fluid webheader'></div>").insertBefore($("#quarto-content"));
         /* If there are multiple images defined: take random one */
-        var idx = parseInt(Math.random() * retroweb_webheader_images.length);
+        var idx = parseInt(Math.random() * rotorweb_webheader_images.length);
 
-        $("<img id='" + elemID + "' class = 'img-contained' src='" + retroweb_webheader_images[idx].image + "'>").appendTo(fluid)
-        console.log(idx)
-        console.log(retroweb_webheader_images)
+        $("<img id='" + elemID + "' class = 'img-contained' src='" + rotorweb_webheader_images[idx].image + "'></img>").appendTo(fluid)
     }
 
 
     $(document).ready(function() {
-            console.log(retroweb_webheader_type)
-        if (retroweb_webheader_type == "carousel") {
-            retroweb_webheader_carousel()
-        } else if (retroweb_webheader_type == "image") {
-            retroweb_webheader_image()
+            console.log(rotorweb_webheader_type)
+        if (rotorweb_webheader_type == "carousel") {
+            rotorweb_webheader_carousel()
+        } else if (rotorweb_webheader_type == "image") {
+            rotorweb_webheader_image()
         }
     });
 })(jQuery);
 </script>
 
 
-<meta property="og:title" content="Retroweb - Retroweb Quarto Theme Template &amp; Demo">
-<meta property="og:description" content="This is the demo of the rendered Retroweb template, a Quarto websites using the Retroweb theme extension.">
-<meta property="og:site-name" content="Retroweb">
-<meta name="twitter:title" content="Retroweb - Retroweb Quarto Theme Template &amp; Demo">
-<meta name="twitter:description" content="This is the demo of the rendered Retroweb template, a Quarto websites using the Retroweb theme extension.">
+<meta property="og:title" content="Rotorweb - Rotorweb Template &amp; Demo">
+<meta property="og:description" content="This is the demo of the rendered Rotorweb template a Quarto websites using the Rotorweb theme extension.">
+<meta property="og:site-name" content="Rotorweb">
+<meta name="twitter:title" content="Rotorweb - Rotorweb Template &amp; Demo">
+<meta name="twitter:description" content="This is the demo of the rendered Rotorweb template a Quarto websites using the Rotorweb theme extension.">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -173,8 +200,8 @@ var retroweb_webheader_options = {interval: 30000}
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <a class="navbar-brand" href="./index.html">
-    <img src="./assets/logo-retroweb-black.svg" alt="">
-    <span class="navbar-title">Retroweb</span>
+    <img src="./assets/logo-rotorweb-black.svg" alt="">
+    <span class="navbar-title">Rotorweb</span>
   </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
@@ -192,6 +219,10 @@ var retroweb_webheader_options = {interval: 30000}
  <span class="dropdown-text">Webheader</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="./titleblocks.html">
+ <span class="dropdown-text">Title blocks</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="./blockcarousel.html">
  <span class="dropdown-text">Block Carousel</span></a>
   </li>  
@@ -203,9 +234,6 @@ var retroweb_webheader_options = {interval: 30000}
   </li>
   <li class="nav-item">
     <a class="nav-link" href="./blog.html">Blog</a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./titleblocks.html">To fix</a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -223,7 +251,7 @@ var retroweb_webheader_options = {interval: 30000}
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
-<p><img src="assets/logo-retroweb-black.svg" class="img-fluid"></p>
+<p><img src="assets/logo-rotorweb-black.svg" class="img-fluid"></p>
 </div></div>
         
     </div>
@@ -232,7 +260,7 @@ var retroweb_webheader_options = {interval: 30000}
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Retroweb Quarto Theme Template &amp; Demo</h1>
+<h1 class="title">Rotorweb Template &amp; Demo</h1>
 </div>
 
 
@@ -252,7 +280,7 @@ var retroweb_webheader_options = {interval: 30000}
 
 </header>
 
-<p>This is the demo of the rendered <a href="rwt">Retroweb template</a>, a <a href="quarto">Quarto</a> websites using the <a href="rwe">Retroweb</a> theme extension.</p>
+<p>This is the demo of the rendered Rotorweb <a href="https://github.com/retostauffer/rotorweb-template">template</a> a <a href="https://quarto.org/">Quarto</a> <a href="">websites</a> using the Rotorweb <a href="%7B%7B%20links.rotorweb-ext%20%3E%7D%7D">theme extension</a>.</p>
 <section id="features-provided" class="level2">
 <h2 class="anchored" data-anchor-id="features-provided">Features provided</h2>
 <ul>
@@ -263,17 +291,17 @@ var retroweb_webheader_options = {interval: 30000}
 </section>
 <section id="getting-started" class="level2">
 <h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
-<p>To get started we need to clone the <a href="wrt">template</a> repository as well as cloning the quarto extension which contains the <a href="wre">Retroweb</a> extension.</p>
-<pre><code>git clone https://github.com/retostauffer/retroweb-template.git mywebsite
+<p>To get started we need to clone the <a href="https://github.com/retostauffer/rotorweb-template">template</a> repository as well as cloning the quarto extension which contains the <a href="https://github.com/retostauffer/rotorweb-ext">Rotorweb</a> extension.</p>
+<pre><code>git clone https://github.com/retostauffer/rotorweb-template.git mywebsite
 cd mywebsite
-git submodule add https://github.com/retostauffer/retroweb-ext.git _extensions/retroweb</code></pre>
+git submodule add https://github.com/retostauffer/rotorweb-ext.git _extensions/rotorweb</code></pre>
 <p>When cloned, the extension can be installed and the page rendered.</p>
 <pre><code>quarto install extension .
 quarto render</code></pre>
 <p>The website will be rendered into <code>docs/</code>.</p>
 </section>
-<section id="just-some-stuff-tbd." class="level1">
-<h1>Just some stuff, tbd.</h1>
+<section id="just-some-stuff-todor" class="level1">
+<h1>Just some stuff; TODO(R)</h1>
 </section>
 <section id="heading-1" class="level1">
 <h1>Heading 1</h1>
@@ -283,7 +311,6 @@ quarto render</code></pre>
 <h3 class="anchored" data-anchor-id="heading-3">Heading 3</h3>
 <section id="heading-4" class="level4">
 <h4 class="anchored" data-anchor-id="heading-4">Heading 4</h4>
-<p>Accessing information from <code>_variables.yml</code>: Reto.</p>
 <div class="grid">
 <div class="g-col-3">
 <p>Grid column width 3.</p>
