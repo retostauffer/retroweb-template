@@ -10,7 +10,7 @@ website:
   repo-actions: issue
   navbar:
     pinned: false
-    logo: assets/logo-retroweb.svg
+    logo: assets/logo-retroweb-black.svg
     left:
       - href: index.qmd
         text: Home
