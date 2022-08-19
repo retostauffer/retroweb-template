@@ -1,0 +1,131 @@
+---
+title: "Webheader"
+
+webheader:
+    type: image
+    images:
+        - image: header-images/unsplash-3.jpg
+          alt: Header image for design purposes.
+---
+
+
+## Web header
+
+_Retoweb_ adds additional functionality to control
+the header of the website (thus, webheader). Two 
+different types are available: `image` or `carousel`.
+
+The [index](index.qmd) page of the template shows
+a series of variations for `type: carousel`. The webheader
+can be defined in the yml header of the individual `.qmd`.
+
+::: {.callout-info}
+Note that the images must be located in `header-images/` (or any
+other folder defined as `resources` in `_quarto.yml`).
+:::
+
+**Example 1:** A simple rotating header with two images without
+additional [image options](#image-options) specified. The interval
+time for auto rotation is set to 2 seconds.
+
+```
+webheader:
+    type: carousel
+    options:
+        interval: 2000
+    images:
+        - image: header-images/unsplash-1.jpg
+        - image: header-images/unsplash-2.jpg
+```
+
+**Example 2:** Rotating carousel-type header with two images, whereof the first
+makes use of all available [image options](#image-options). The second solely
+includes an alternative text which is included in the HTML but does not change
+the appearance.
+
+```
+webheader:
+    type: carousel
+    options:
+        interval: 2000
+    images:
+        - image: header-images/unsplash-1.jpg
+          title: "Image number one."
+          description: "Full header with icon, title, description, and background color."
+          alt: Page header showing the websites logo on top of an artistic blueish background.
+          bg: "rgba(255, 255, 255, 0.2)"
+          icon: assets/logo-retroweb-white.svg
+
+        - image: header-images/unsplash-2.jpg
+          alt: Page header image for design purposes.
+```
+
+**Example 3:** Static header image. As only one image is provided,
+the page will always show the image as defined.
+
+```
+webheader:
+    type: image
+    images:
+        - image: header-images/unsplash-1.jpg
+```
+
+**Example 4:** Static but random header image. Each time the page is loaded
+one (randomly selected) image among the ones defined will be displayed.
+The [about][about.qmd] page shows how this looks like.
+
+```
+webheader:
+    type: image
+    images:
+        - image: header-images/unsplash-1.jpg
+        - image: header-images/unsplash-2.jpg
+        - image: header-images/unsplash-3.jpg
+        - image: header-images/unsplash-4.jpg
+```
+
+
+
+### Types
+
+The two types available are:
+
+| Type           |  Description                      |
+|:---------------|:----------------------------------|
+| `carousel`     | series of rotating images. Allows for additional styling (see [below]) |
+| `image`        | single or random image (static)   |
+
+
+### Carousel options
+
+Defined under `options`. For now, only the interval (for automated
+carousel rotation) can be defined.
+
+| Option         |  Description                      |
+|:---------------|:----------------------------------|
+| `interval`     | Positive integer, rotation-interval in milliseconds. Defaults to `4000` if not specified. |
+
+
+### Image options
+
+The following options are available to define an image.
+All besides `image` are optional and affect the way
+the image(s) are displayed.
+
+| Option         |  Description                      |
+|:---------------|:----------------------------------|
+| `image`        | Name/path of the header image. If not specified it will simply be ignored.  |
+| `title`        | Title to be displayed.            |
+| `description`  | Description to be displayed.      |
+| `alt`          | Alternative information added to the `image`. |
+| `bg`           | Background color, any valid css definition (e.g., `red`, `#fff`, `rgba(100, 100, 100, 0.3)`). |
+| `icon`         | Name/path of an icon/image to be displayed on top of the header image. |
+
+
+::: {.callout-caution}
+# Features for `type: image`
+
+Does not yet provide the optional arguments like `title`, `description`,
+`alt`, `bg`, or `icon` but will be added (TODO(R)).
+:::
+

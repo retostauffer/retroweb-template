@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2022-08-17">
+
+<title>Retroweb - Webheader</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script>
+var retroweb_webheader_images = [{image: 'header-images/unsplash-3.jpg', alt: 'Header image for design purposes.', title: null, description: null, icon: null, bg: null}, ];
+var retroweb_webheader_type = 'image'
+var retroweb_webheader_options = {interval: 4000}
+</script>
+<script>
+(function($) {
+
+    function retroweb_webheader_carousel() {
+        /* First: create new fluid container to palce the webheader */
+        var fluid = $("<div class='container-fluid webheader'></div>").insertBefore($("#quarto-content"));
+        var elemID = "retroweb_webheader_carousel"
+
+        /* Ensure that we only find it once? */
+        var res = "<div id='" + elemID + "' class='carousel slide' data-ride='carousel'>\n"
+                + "  <div class='carousel-inner'></div>\n"
+                + "</div>"
+
+        // Navigation
+        var nav = "<button class='carousel-control-prev' type='button' data-bs-target='#" + elemID + "' data-bs-slide='prev'>"
+                + "  <span class='carousel-control-prev-icon' aria-hidden='true'></span>"
+                + "</button>"
+                + "<button class='carousel-control-next' type='button' data-bs-target='#" + elemID + "' data-bs-slide='next'>"
+                + "  <span class='carousel-control-next-icon' aria-hidden='true'></span>"
+                + "</button>"
+
+        $(res).appendTo(fluid)
+        $(nav).appendTo("#" + elemID)
+        var inner = $("#" + elemID).find(".carousel-inner");
+        var ind   = $("<civ class='carousel-indicators'></div>").insertBefore(inner);
+        $.each($(retroweb_webheader_images), function(k, rec) {
+
+            /* adding image (carousel-item) */
+            var tmp = $("<div class='carousel-item'>").appendTo(inner);
+            var img = $("<img class='d-block w-100' src='" + rec["image"] + "'>").appendTo(tmp)
+            if (rec.alt) { $(img).prop("alt", rec.alt); }
+
+            /* Adding title + caption or icon + title + caption (gridded) */
+            var cap = $("<div class='carousel-caption d-none d-md-block'>" +
+                        "  <div class='container-fluid'>" +
+                        "    <div class='grid'></div>" +
+                        "  </div>" +
+                        "</div>").appendTo(tmp)
+            var grd = $(cap).find(".grid")
+            if (rec.icon === null) {
+                $("<div class='g-col-12'></div>").appendTo(grd)
+            } else {
+                $("<div class='g-col-2'>" +
+                  "  <img class='icon' src='" + rec.icon + "'>" +
+                  "</div>" +
+                  "<div class='g-col-10'></div>").appendTo(grd)
+            } 
+
+            /* Appending title and caption, apply bakcground color (if specified ) */
+            if (rec.title) {
+                $("<div class='caption-title'></div>")
+                        .appendTo($(grd).children("div:last")).html(rec.title);
+            }
+            if (rec.description) {
+                $("<div class='caption-description'></div>")
+                        .appendTo($(grd).children("div:last")).html(rec.description);
+            }
+            if (rec.bg) { $(cap).css("background-color", rec.bg) }
+
+            /* adding indicator */
+            $("<button type='button' data-bs-target='#" + elemID +
+              "' data-bs-slide-to='" + k + "'></button>").appendTo(ind);
+
+        });
+
+        /* Make first image and indicator active */
+        $("#" + elemID + " .carousel-item:first").addClass("active")
+        $("#" + elemID + " .carousel-indicators button:first").addClass("active")
+
+
+        $("#" + elemID).carousel({interval: retroweb_webheader_options["interval"]}).carousel("cycle")
+    }
+
+    function retroweb_webheader_image() {
+        /* First: create new fluid container to palce the webheader */
+        var elemID = "retroweb_webheader_image";
+        var fluid  = $("<div id='" + elemID + "' class='container-fluid webheader'></div>").insertBefore($("#quarto-content"));
+        /* If there are multiple images defined: take random one */
+        var idx = parseInt(Math.random() * retroweb_webheader_images.length);
+
+        $("<img id='" + elemID + "' class = 'img-contained' src='" + retroweb_webheader_images[idx].image + "'>").appendTo(fluid)
+        console.log(idx)
+        console.log(retroweb_webheader_images)
+    }
+
+
+    $(document).ready(function() {
+            console.log(retroweb_webheader_type)
+        if (retroweb_webheader_type == "carousel") {
+            retroweb_webheader_carousel()
+        } else if (retroweb_webheader_type == "image") {
+            retroweb_webheader_image()
+        }
+    });
+})(jQuery);
+</script>
+
+
+<meta name="twitter:title" content="Retroweb - Webheader">
+<meta name="twitter:description" content="Retoweb adds additional functionality to control the header of the website (thus, webheader). Two different types are available: image or carousel.">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <img src="./assets/logo-retroweb-black.svg" alt="">
+    <span class="navbar-title">Retroweb</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./blog.html">Blog</a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-features" role="button" data-bs-toggle="dropdown" aria-expanded="false">Features</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-features">    
+        <li>
+    <a class="dropdown-item" href="./webheader.html">
+ <span class="dropdown-text">Webheader</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./blockcarousel.html">
+ <span class="dropdown-text">Block Carousel</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html">About</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Webheader</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 17, 2022</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="web-header" class="level2">
+<h2 class="anchored" data-anchor-id="web-header">Web header</h2>
+<p><em>Retoweb</em> adds additional functionality to control the header of the website (thus, webheader). Two different types are available: <code>image</code> or <code>carousel</code>.</p>
+<p>The <a href="./index.html">index</a> page of the template shows a series of variations for <code>type: carousel</code>. The webheader can be defined in the yml header of the individual <code>.qmd</code>.</p>
+<div class="callout-info callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Info
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that the images must be located in <code>header-images/</code> (or any other folder defined as <code>resources</code> in <code>_quarto.yml</code>).</p>
+</div>
+</div>
+<p><strong>Example 1:</strong> A simple rotating header with two images without additional <a href="#image-options">image options</a> specified. The interval time for auto rotation is set to 2 seconds.</p>
+<pre><code>webheader:
+    type: carousel
+    options:
+        interval: 2000
+    images:
+        - image: header-images/unsplash-1.jpg
+        - image: header-images/unsplash-2.jpg</code></pre>
+<p><strong>Example 2:</strong> Rotating carousel-type header with two images, whereof the first makes use of all available <a href="#image-options">image options</a>. The second solely includes an alternative text which is included in the HTML but does not change the appearance.</p>
+<pre><code>webheader:
+    type: carousel
+    options:
+        interval: 2000
+    images:
+        - image: header-images/unsplash-1.jpg
+          title: "Image number one."
+          description: "Full header with icon, title, description, and background color."
+          alt: Page header showing the websites logo on top of an artistic blueish background.
+          bg: "rgba(255, 255, 255, 0.2)"
+          icon: assets/logo-retroweb-white.svg
+
+        - image: header-images/unsplash-2.jpg
+          alt: Page header image for design purposes.</code></pre>
+<p><strong>Example 3:</strong> Static header image. As only one image is provided, the page will always show the image as defined.</p>
+<pre><code>webheader:
+    type: image
+    images:
+        - image: header-images/unsplash-1.jpg</code></pre>
+<p><strong>Example 4:</strong> Static but random header image. Each time the page is loaded one (randomly selected) image among the ones defined will be displayed. The [about][about.qmd] page shows how this looks like.</p>
+<pre><code>webheader:
+    type: image
+    images:
+        - image: header-images/unsplash-1.jpg
+        - image: header-images/unsplash-2.jpg
+        - image: header-images/unsplash-3.jpg
+        - image: header-images/unsplash-4.jpg</code></pre>
+<section id="types" class="level3">
+<h3 class="anchored" data-anchor-id="types">Types</h3>
+<p>The two types available are:</p>
+<table class="table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 68%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>carousel</code></td>
+<td style="text-align: left;">series of rotating images. Allows for additional styling (see [below])</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>image</code></td>
+<td style="text-align: left;">single or random image (static)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="carousel-options" class="level3">
+<h3 class="anchored" data-anchor-id="carousel-options">Carousel options</h3>
+<p>Defined under <code>options</code>. For now, only the interval (for automated carousel rotation) can be defined.</p>
+<table class="table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 68%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Option</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>interval</code></td>
+<td style="text-align: left;">Positive integer, rotation-interval in milliseconds. Defaults to <code>4000</code> if not specified.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="image-options" class="level3">
+<h3 class="anchored" data-anchor-id="image-options">Image options</h3>
+<p>The following options are available to define an image. All besides <code>image</code> are optional and affect the way the image(s) are displayed.</p>
+<table class="table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 68%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Option</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>image</code></td>
+<td style="text-align: left;">Name/path of the header image. If not specified it will simply be ignored.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>title</code></td>
+<td style="text-align: left;">Title to be displayed.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>description</code></td>
+<td style="text-align: left;">Description to be displayed.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>alt</code></td>
+<td style="text-align: left;">Alternative information added to the <code>image</code>.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>bg</code></td>
+<td style="text-align: left;">Background color, any valid css definition (e.g., <code>red</code>, <code>#fff</code>, <code>rgba(100, 100, 100, 0.3)</code>).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>icon</code></td>
+<td style="text-align: left;">Name/path of an icon/image to be displayed on top of the header image.</td>
+</tr>
+</tbody>
+</table>
+<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Features for <code>type: image</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Does not yet provide the optional arguments like <code>title</code>, <code>description</code>, <code>alt</code>, <code>bg</code>, or <code>icon</code> but will be added (TODO(R)).</p>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ About the site
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="./about.html">About</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="./blog.html">Blog</a>
+  </li>  
+</ul>
+    </div>   
+      <div class="nav-footer-center">
+        <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ External
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://www.google.com">google</a>
+  </li>  
+</ul>
+      </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ Social
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/">
+      <i class="bi bi-twitter" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>
