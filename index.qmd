@@ -5,23 +5,47 @@ webheader:
     type: carousel
     # currently only allows to set the interval; default is 2000ms
     options:
-        interval: 3000
+        interval: 30000
     images:
         - image: header-images/unsplash-1.jpg
-          alt: just an image
-          caption: "Image number one."
+          title: "Image number one."
+          description: "Full header with icon, title, description, and background color."
+          alt: Page header showing the websites logo on top of an artistic blueish background.
+          bg: "rgba(255, 255, 255, 0.2)"
+          icon: assets/logo-retroweb-white.svg
+
         - image: header-images/unsplash-2.jpg
-          alt: another image
-          caption: "Image number two."
+          title: "Second image with title, description, light background, without an icon."
+          description: "This is just the caption"
+          alt: Page header image showing some stilized cubes in blueish color.
+          bg: "rgba(255, 255, 255, 0.1)"
+
         - image: header-images/unsplash-3.jpg
-          alt: another image
-          caption: "Image number three."
+          title: "Image number three, title and background"
+          alt: Page header image showing a stylized keyboard in blueish color.
+          bg: "rgba(255, 255, 255, 0.3)"
+
+        - image: header-images/unsplash-4.jpg
+          title: "Seoncd last image: Title only"
+
+        - image: header-images/unsplash-5.jpg
 ---
 
 
 This is the demo of the rendered [Retroweb template](rwt), a 
 [Quarto](quarto) websites using the [Retroweb](rwe) theme extension.
 
+
+::::: {.container}
+:::: {.row}
+::: {.col-sm-5}
+aaaaaaaaaaaaaa
+:::
+::: {.col-sm-5}
+adfasdf
+:::
+::::
+:::::
 
 ## Getting started
 
@@ -46,12 +70,12 @@ The website will be rendered into `docs/`.
 
 ## Block-carousel shortcode
 
-`{{{< blockcarousel [image1] [image2] ... id = [elementId] >}}}` allows to create block
+`{{{< blockcarousel [image1] [image2] ... id=[elementId] >}}}` allows to create block
 carousels within the content of the page. Currently no additional support for
 options (TODO(R)).
 
 <!-- bootstrap 5 image carousel -->
-{{< blockcarousel header-images/unsplash-1.jpg header-images/unsplash-2.jpg id = "block_carousel_1" >}}
+{{< blockcarousel header-images/unsplash-1.jpg header-images/unsplash-2.jpg id="block_carousel_1" >}}
 
 # Just some stuff, tbd.
 
