@@ -36,16 +36,14 @@ This is the demo of the rendered [Retroweb template](rwt), a
 [Quarto](quarto) websites using the [Retroweb](rwe) theme extension.
 
 
-::::: {.container}
-:::: {.row}
-::: {.col-sm-5}
-aaaaaaaaaaaaaa
+:::: {.grid}
+::: {.g-col-3}
+Grid column width 3.
 :::
-::: {.col-sm-5}
-adfasdf
+::: {.g-col-9}
+Grid column width 9.
 :::
 ::::
-:::::
 
 ## Getting started
 
