@@ -7,20 +7,24 @@ webheader:
     options:
         interval: 3000
     images:
-        - image: images/header-unsplash-1.jpg
+        - image: assets/header-unsplash-1.jpg
           alt: just an image
           caption: "Image number one."
-        - image: images/header-unsplash-2.jpg
+        - image: assets/header-unsplash-2.jpg
           alt: another image
           caption: "Image number two."
-        - image: images/header-unsplash-3.jpg
+        - image: assets/header-unsplash-3.jpg
           alt: another image
           caption: "Image number three."
 ---
 
-This is a Quarto website.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+This is the demo of the rendered [Retroweb template](rwt), a 
+[Quarto](quarto) websites using the [Retroweb](rwe) theme extension.
+
+
+
+
 
 {{< var name >}}
 
@@ -31,3 +35,8 @@ To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 ::: {.red}
 adsfadsf
 :::
+
+
+[quarto]: https://quarto.org/docs/reference/projects/websites.html
+[rwt]: https://github.com/retostauffer/retroweb-template
+[rwe]: https://quarto.org/docs/reference/projects/websites.html

@@ -1,9 +1,13 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: Retroweb
   page-navigation: true
+  repo-url: https://github.com/retostauffer/retroweb-template
+  repo-branch: main
+  repo-actions: issue
   navbar:
     pinned: false
     logo: assets/logo-retroweb.svg
@@ -33,10 +37,19 @@ website:
         href: https://twitter.com/
 
 resources:
-  - images
   - assets
+  - header-images
 
 format:
   retroweb-html:
     date: 2022-08-17
+
+twitter-card:
+  - title: Retroweb - Quarto Website Theme
+  - description: Template for Quarto-based website with the Retroweb theme!
+  - image: assets/logo-retroweb.svg
+  - image-alt: "Retroweb logo image"
+  - card-style: summary
+  - creator: "@retostauffer"
+  - site: https://github.com/retostauffer/retroweb-template
 

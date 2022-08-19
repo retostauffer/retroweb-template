@@ -3,7 +3,7 @@
 
 /_site
 /_files
-/_extensions/*
+/_extensions/retroweb-ext
 *.swp
 
 /.quarto/
