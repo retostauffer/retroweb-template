@@ -25,7 +25,28 @@
     "href": "index.html",
     "title": "website",
     "section": "",
-    "text": "Reto\n\nCAROUSEL                  Previous            Next  \n\nadsfadsf"
+    "text": "This is the demo of the rendered Retroweb template, a Quarto websites using the Retroweb theme extension."
+  },
+  {
+    "objectID": "index.html#getting-started",
+    "href": "index.html#getting-started",
+    "title": "website",
+    "section": "Getting started",
+    "text": "Getting started\nTo get started we need to clone the template repository as well as cloning the quarto extension which contains the Retroweb extension.\ngit clone https://github.com/retostauffer/retroweb-template.git mywebsite\ncd mywebsite\ngit submodule add https://github.com/retostauffer/retroweb-ext.git _extensions/retroweb\nWhen cloned, the extension can be installed and the page rendered.\nquarto install extension .\nquarto render\nThe website will be rendered into docs/."
+  },
+  {
+    "objectID": "index.html#block-carousel-shortcode",
+    "href": "index.html#block-carousel-shortcode",
+    "title": "website",
+    "section": "Block-carousel shortcode",
+    "text": "Block-carousel shortcode\n{{< blockcarousel [image1] [image2] ... id = [elementId] >}} allows to create block carousels within the content of the page. Currently no additional support for options (TODO(R)).\n\n                    Previous            Next"
+  },
+  {
+    "objectID": "index.html#heading-2",
+    "href": "index.html#heading-2",
+    "title": "website",
+    "section": "Heading 2",
+    "text": "Heading 2\n\nHeading 3\n\nHeading 4\nAccessing information from _variables.yml: Reto.\n\nadsfadsf"
   },
   {
     "objectID": "about.html",

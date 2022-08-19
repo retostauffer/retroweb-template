@@ -7,13 +7,13 @@ webheader:
     options:
         interval: 3000
     images:
-        - image: assets/header-unsplash-1.jpg
+        - image: header-images/unsplash-1.jpg
           alt: just an image
           caption: "Image number one."
-        - image: assets/header-unsplash-2.jpg
+        - image: header-images/unsplash-2.jpg
           alt: another image
           caption: "Image number two."
-        - image: assets/header-unsplash-3.jpg
+        - image: header-images/unsplash-3.jpg
           alt: another image
           caption: "Image number three."
 ---
@@ -23,13 +23,48 @@ This is the demo of the rendered [Retroweb template](rwt), a
 [Quarto](quarto) websites using the [Retroweb](rwe) theme extension.
 
 
+## Getting started
+
+To get started we need to clone the [template](wrt) repository as well
+as cloning the quarto extension which contains the [Retroweb](wre) extension.
+
+```
+git clone https://github.com/retostauffer/retroweb-template.git mywebsite
+cd mywebsite
+git submodule add https://github.com/retostauffer/retroweb-ext.git _extensions/retroweb
+```
+
+When cloned, the extension can be installed and the page rendered.
+
+```
+quarto install extension .
+quarto render
+```
+
+The website will be rendered into `docs/`.
 
 
+## Block-carousel shortcode
 
-{{< var name >}}
+`{{{< blockcarousel [image1] [image2] ... id = [elementId] >}}}` allows to create block
+carousels within the content of the page. Currently no additional support for
+options (TODO(R)).
 
 <!-- bootstrap 5 image carousel -->
-{{< blockcarousel images/header-unsplash-1.jpg images/header-unsplash-2.jpg id="fooCarousel" >}}
+{{< blockcarousel header-images/unsplash-1.jpg header-images/unsplash-2.jpg id = "block_carousel_1" >}}
+
+# Just some stuff, tbd.
+
+# Heading 1
+
+## Heading 2
+
+### Heading 3
+
+#### Heading 4
+
+
+Accessing information from `_variables.yml`: {{< var name >}}.
 
 
 ::: {.red}

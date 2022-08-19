@@ -56,7 +56,7 @@ ul.task-list{list-style: none;}
   }
 }</script>
 <script>
-var retroweb_webheader_images = [{image: 'assets/header-unsplash-1.jpg', alt: 'just an image', caption: 'Image number one.'}, {image: 'assets/header-unsplash-2.jpg', alt: 'another image', caption: 'Image number two.'}, {image: 'assets/header-unsplash-3.jpg', alt: 'another image', caption: 'Image number three.'}, ];
+var retroweb_webheader_images = [{image: 'header-images/unsplash-1.jpg', alt: 'just an image', caption: 'Image number one.'}, {image: 'header-images/unsplash-2.jpg', alt: 'another image', caption: 'Image number two.'}, {image: 'header-images/unsplash-3.jpg', alt: 'another image', caption: 'Image number three.'}, ];
 var retroweb_webheader_type = 'carousel'
 var retroweb_webheader_options = {interval: 3000}
 </script>
@@ -195,14 +195,44 @@ var retroweb_webheader_options = {interval: 3000}
 </header>
 
 <p>This is the demo of the rendered <a href="rwt">Retroweb template</a>, a <a href="quarto">Quarto</a> websites using the <a href="rwe">Retroweb</a> theme extension.</p>
-<p>Reto</p>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
+<p>To get started we need to clone the <a href="wrt">template</a> repository as well as cloning the quarto extension which contains the <a href="wre">Retroweb</a> extension.</p>
+<pre><code>git clone https://github.com/retostauffer/retroweb-template.git mywebsite
+cd mywebsite
+git submodule add https://github.com/retostauffer/retroweb-ext.git _extensions/retroweb</code></pre>
+<p>When cloned, the extension can be installed and the page rendered.</p>
+<pre><code>quarto install extension .
+quarto render</code></pre>
+<p>The website will be rendered into <code>docs/</code>.</p>
+</section>
+<section id="block-carousel-shortcode" class="level2">
+<h2 class="anchored" data-anchor-id="block-carousel-shortcode">Block-carousel shortcode</h2>
+<p><code>{{&lt; blockcarousel [image1] [image2] ... id = [elementId] &gt;}}</code> allows to create block carousels within the content of the page. Currently no additional support for options (TODO(R)).</p>
 <!-- bootstrap 5 image carousel -->
-<p>CAROUSEL</p><div id="fooCarousel" class="carousel slide" data-bs-ride="carousel">  <div class="carousel-inner"><div class="carousel-item active">  <img src="images/header-unsplash-1.jpg" class="d-block w-100"></div><div class="carousel-item">  <img src="images/header-unsplash-2.jpg" class="d-block w-100"></div>  </div>  <button class="carousel-control-prev" type="button" data-bs-target="#fooCarousel" data-bs-slide="prev">    <span class="carousel-control-prev-icon" aria-hidden="true"></span>    <span class="visually-hidden">Previous</span>  </button>  <button class="carousel-control-next" type="button" data-bs-target="#fooCarousel" data-bs-slide="next">    <span class="carousel-control-next-icon" aria-hidden="true"></span>    <span class="visually-hidden">Next</span>  </button></div><p></p>
+<p></p><div id="defaultCarousel" class="carousel slide" data-bs-ride="carousel">  <div class="carousel-inner"><div class="carousel-item active">  <img src="header-images/unsplash-1.jpg" class="d-block w-100"></div><div class="carousel-item">  <img src="header-images/unsplash-2.jpg" class="d-block w-100"></div><div class="carousel-item">  <img src="id" class="d-block w-100"></div>  </div>  <button class="carousel-control-prev" type="button" data-bs-target="#defaultCarousel" data-bs-slide="prev">    <span class="carousel-control-prev-icon" aria-hidden="true"></span>    <span class="visually-hidden">Previous</span>  </button>  <button class="carousel-control-next" type="button" data-bs-target="#defaultCarousel" data-bs-slide="next">    <span class="carousel-control-next-icon" aria-hidden="true"></span>    <span class="visually-hidden">Next</span>  </button></div><p></p>
+</section>
+<section id="just-some-stuff-tbd." class="level1">
+<h1>Just some stuff, tbd.</h1>
+</section>
+<section id="heading-1" class="level1">
+<h1>Heading 1</h1>
+<section id="heading-2" class="level2">
+<h2 class="anchored" data-anchor-id="heading-2">Heading 2</h2>
+<section id="heading-3" class="level3">
+<h3 class="anchored" data-anchor-id="heading-3">Heading 3</h3>
+<section id="heading-4" class="level4">
+<h4 class="anchored" data-anchor-id="heading-4">Heading 4</h4>
+<p>Accessing information from <code>_variables.yml</code>: Reto.</p>
 <div class="red">
 <p>adsfadsf</p>
 </div>
 
 
+</section>
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

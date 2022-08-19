@@ -3,17 +3,16 @@ title: "About"
 
 webheader:
     type: image
-    # currently only allows to set the interval; default is 2000ms
-    options:
-        interval: 3000
+    # type: image with multiple images defined will
+    # show a random one each time the page is loaded
     images:
-        - image: images/header-unsplash-1.jpg
+        - image: header-images/unsplash-1.jpg
           alt: just an image
           caption: "Image number one."
-        - image: images/header-unsplash-2.jpg
+        - image: header-images/unsplash-2.jpg
           alt: another image
           caption: "Image number two."
-        - image: images/header-unsplash-3.jpg
+        - image: header-images/unsplash-3.jpg
           alt: another image
           caption: "Image number three."
 ---
