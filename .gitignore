@@ -3,9 +3,8 @@
 
 /_site
 /_files
-/_extensions/rotorweb-ext
+/_extensions/rotorweb
 *.swp
 
 /.quarto/
 /docs/assets/logo-rotorweb_orig.svg
-/docs/_extensions
