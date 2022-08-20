@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2022-08-17">
+
+<title>Rotorweb - Fontawesome</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/jquery-3.6.0/jquery.min.js"></script>
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script>
+(function($) {
+    $(document).ready(function() {
+        var elems = $("ul > li .fa-li")
+        $.each(elems, function(k, v) {
+                $(v).closest("li").addClass("fali")
+        });
+    });
+})(jQuery);
+</script>
+
+
+<link rel="stylesheet" href="../_extensions/rotorweb/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+<meta property="og:title" content="Rotorweb - Fontawesome">
+<meta property="og:description" content="Rotorweb provides additional support for fontawesome icons by adding two additional quarto shortcodes. A ‘frozen’ version of fontawesome is shipped with the extension to avoid cross-site includes.">
+<meta property="og:site-name" content="Rotorweb">
+<meta name="twitter:title" content="Rotorweb - Fontawesome">
+<meta name="twitter:description" content="Rotorweb provides additional support for fontawesome icons by adding two additional quarto shortcodes. A ‘frozen’ version of fontawesome is shipped with the extension to avoid cross-site includes.">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../index.html">
+    <img src="../assets/logo-rotorweb-black.svg" alt="">
+    <span class="navbar-title">Rotorweb</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-features" role="button" data-bs-toggle="dropdown" aria-expanded="false">Features</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-features">    
+        <li>
+    <a class="dropdown-item" href="../features/webheader.html">
+ <span class="dropdown-text">Webheader</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../features/titleblocks.html">
+ <span class="dropdown-text">Title blocks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../features/blockcarousel.html">
+ <span class="dropdown-text">Block Carousel</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../features/jquery.html">
+ <span class="dropdown-text">jQuery</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../features/fontawesome.html">
+ <span class="dropdown-text">Fontawesome</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../blog.html">Blog</a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html">About</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Fontawesome</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 17, 2022</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<p>Rotorweb provides additional support for <a href="https://fontawesome.com/">fontawesome</a> icons by adding two additional quarto shortcodes. A ‘frozen’ version of fontawesome is shipped with the <a href="https://github.com/retostauffer/rotorweb-ext">extension</a> to avoid cross-site includes. Check <a href="https://github.com/retostauffer/rotorweb-ext/blob/main/package.json"><code>package.json</code></a> to get the current version. This feature is inspired by the <a href="https://github.com/quarto-ext/fontawesome">Font Awesome Extension for Quarto</a> by RStudio.</p>
+<section id="available-shortcodes" class="level3">
+<h3 class="anchored" data-anchor-id="available-shortcodes">Available shortcodes</h3>
+<p>Two shortcodes are available which providing the same options. Below a series of examples for both shortcodes are shown.</p>
+<table class="table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 74%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Shortcode</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>{{&lt; fa ... &gt;}}</code></td>
+<td style="text-align: left;">Creates in-line fontawesome icons.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>{{&lt; fali ... &gt;}}</code></td>
+<td style="text-align: left;">Allows to use fontawesome icons in itemized lists.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="shortcode-options" class="level3">
+<h3 class="anchored" data-anchor-id="shortcode-options">Shortcode options</h3>
+<table class="table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 74%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Option</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>...</code></td>
+<td style="text-align: left;">One or more strings to define the fontawesome icon and its size.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>class</code></td>
+<td style="text-align: left;">Adds additional custom classes for customization.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>color</code></td>
+<td style="text-align: left;">Add custom color to the icon.</td>
+</tr>
+</tbody>
+</table>
+<p>Note that the icon definition (<code>...</code>) must be provided. If missing (e.g., by using <code>{{&lt; fa &gt;}}</code> or <code>{{&lt; fali &gt;}}</code>) a warning is written to stdout and the following icon will be displayed: <i class="fa-solid fa-skull" style="color: red"></i>. Note that the</p>
+</section>
+<section id="icon-examples" class="level3">
+<h3 class="anchored" data-anchor-id="icon-examples">Icon examples</h3>
+<p>Available icons can be searched via <a href="https://fontawesome.com/icons" class="uri">https://fontawesome.com/icons</a>, only those included in the free plan will work.</p>
+<table class="table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 86%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Result</th>
+<th style="text-align: left;">Shortcode</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><p><i class="fa-solid fa-comment"></i></p></td>
+<td style="text-align: left;"><code>{{&lt; fa solid comment &gt;}}</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><p><i class="fa-regular fa-comment"></i></p></td>
+<td style="text-align: left;"><code>{{&lt; fa regular comment &gt;}}</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><p><i class="text-primary fa-solid fa-code"></i></p></td>
+<td style="text-align: left;"><code>{{&lt; fa solid code class="text-primary" &gt;}}</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><p><i class="text-secondary fa-solid fa-code"></i></p></td>
+<td style="text-align: left;"><code>{{&lt; fa solid code class="text-secondary" &gt;}}</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><p><i class="text-success fa-solid fa-code"></i></p></td>
+<td style="text-align: left;"><code>{{&lt; fa solid code class="text-success" &gt;}}</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><p><i class="text-danger fa-solid fa-code"></i></p></td>
+<td style="text-align: left;"><code>{{&lt; fa solid code class="text-danger" &gt;}}</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><p><i class="text-warning fa-solid fa-code"></i></p></td>
+<td style="text-align: left;"><code>{{&lt; fa solid code class="text-warning" &gt;}}</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><p><i class="text-info fa-solid fa-code"></i></p></td>
+<td style="text-align: left;"><code>{{&lt; fa solid code class="text-info" &gt;}}</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><p><i class="fa-solid fa-droplet" style="color: #EC0AF0"></i></p></td>
+<td style="text-align: left;"><code>{{&lt; fa solid droplet color="#EC0AF0" &gt;}}</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><p><i class="fa-solid fa-droplet" style="color: rgba(0, 255, 168, 0.5)"></i></p></td>
+<td style="text-align: left;"><code>{{&lt; fa solid droplet color="rgba(0, 255, 168, 0.5)" &gt;}}</code></td>
+</tr>
+</tbody>
+</table>
+<p>Adjusting icon size, more details can be found <a href="https://fontawesome.com/docs/web/style/size">here</a>.</p>
+<table class="table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 86%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Result</th>
+<th style="text-align: left;">Shortcode</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><p><i class="fa-regular fa-image fa-xs"></i></p></td>
+<td style="text-align: left;"><code>{{&lt; fa regular image xs &gt;}}</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><p><i class="fa-regular fa-image fa-sm"></i></p></td>
+<td style="text-align: left;"><code>{{&lt; fa regular image sm &gt;}}</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><p><i class="fa-regular fa-image"></i></p></td>
+<td style="text-align: left;"><code>{{&lt; fa regular image &gt;}}</code> (regular size)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><p><i class="fa-regular fa-image fa-lg"></i></p></td>
+<td style="text-align: left;"><code>{{&lt; fa regular image lg &gt;}}</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><p><i class="fa-regular fa-image fa-xl"></i></p></td>
+<td style="text-align: left;"><code>{{&lt; fa regular image xl &gt;}}</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><p><i class="fa-regular fa-image fa-xl"></i></p></td>
+<td style="text-align: left;"><code>{{&lt; fa regular image xl &gt;}}</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><p><i class="fa-regular fa-image fa-1x"></i></p></td>
+<td style="text-align: left;"><code>{{&lt; fa regular image 1x &gt;}}</code> (regular size)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><p><i class="fa-regular fa-image fa-2x"></i></p></td>
+<td style="text-align: left;"><code>{{&lt; fa regular image 2x &gt;}}</code> (twice as large as regular)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><p><i class="fa-regular fa-image fa-3x"></i></p></td>
+<td style="text-align: left;"><code>{{&lt; fa regular image 3x &gt;}}</code> (three times bigger than regular)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="using-fontawesome-icons-for-itemized-lists" class="level3">
+<h3 class="anchored" data-anchor-id="using-fontawesome-icons-for-itemized-lists">Using fontawesome icons for itemized lists</h3>
+<p><strong>Example 1:</strong> List with fontawesome icons (in-line icons; <code>{{&lt; fa &gt;}}</code>):</p>
+<ul>
+<li><i class="fa-solid fa-lightbulb" style="color: #FFEB3B"></i> Idea</li>
+<li><i class="fa-solid fa-code" style="color: #FF5722"></i> Development</li>
+<li><i class="fa-solid fa-share-nodes" style="color: #9C27B0"></i> Deployment</li>
+</ul>
+<p>Created by the following markup:</p>
+<pre><code>* {{&lt; fa solid lightbulb   color="#FFEB3B" &gt;}} Idea
+* {{&lt; fa solid code        color="#FF5722" &gt;}} Development
+* {{&lt; fa solid share-nodes color="#9C27B0" &gt;}} Deployment</code></pre>
+<p><strong>Example 2:</strong> List with fontawesome list-icons (<code>{{&lt; fali &gt;}}</code>):</p>
+<ul>
+<li><span class="fa-li"><i class="fa-solid fa-lightbulb" style="color: #FFEB3B"></i></span> Idea</li>
+<li><span class="fa-li"><i class="fa-solid fa-code" style="color: #FF5722"></i></span> Development</li>
+<li><span class="fa-li"><i class="fa-solid fa-share-nodes" style="color: #9C27B0"></i></span> Deployment</li>
+</ul>
+<p>Created by the following markup:</p>
+<pre><code>* {{&lt; fali solid lightbulb   color="#FFEB3B" &gt;}} Idea
+* {{&lt; fali solid code        color="#FF5722" &gt;}} Development
+* {{&lt; fali solid share-nodes color="#9C27B0" &gt;}} Deployment</code></pre>
+<p><strong>Example 3:</strong> Using <code>class</code> instead of <code>color</code> argument:</p>
+<ul>
+<li><span class="fa-li"><i class="text-primary fa-regular fa-square-check"></i></span> First list entry</li>
+<li><span class="fa-li"><i class="text-primary fa-regular fa-square-check"></i></span> Second list entry</li>
+<li><span class="fa-li"><i class="text-secondary fa-regular fa-square"></i></span> Last list entry</li>
+</ul>
+<p>Created by the following markup:</p>
+<pre><code>* {{&lt; fali regular square-check class="text-primary"   &gt;}} First list entry
+* {{&lt; fali regular square-check class="text-primary"   &gt;}} Second list entry
+* {{&lt; fali regular square       class="text-secondary" &gt;}} Last list entry</code></pre>
+<p><strong>Example 4:</strong> The <code>{{&lt; fali &gt;}}</code> can be anywhere in the list entry and must not be at the beginning:</p>
+<ul>
+<li>First list entry <span class="fa-li"><i class="fa-regular fa-square"></i></span></li>
+<li>Second list entry <span class="fa-li"><i class="fa-regular fa-square-check"></i></span></li>
+<li>Last list entry <span class="fa-li"><i class="fa-regular fa-square"></i></span></li>
+</ul>
+<p>Created by the following markup:</p>
+<pre><code>* First list entry {{&lt; fali regular square &gt;}}
+* Second list entry {{&lt; fali regular square-check &gt;}}
+* Last list entry {{&lt; fali regular square &gt;}}</code></pre>
+<p><strong>Example 5:</strong> Itemis with in-line icons, no icons, or list icons can be mixed if needed:</p>
+<ul>
+<li><span class="fa-li"><i class="fa-brands fa-orcid"></i></span> First list item</li>
+<li><i class="fa-brands fa-orcid"></i> Second list item</li>
+<li><i class="fa-brands fa-orcid"></i> Third list item</li>
+<li>The second last item</li>
+<li><span class="fa-li"><i class="fa-brands fa-orcid"></i></span> Last list item</li>
+</ul>
+<p>Created by the following markup:</p>
+<pre><code>* {{&lt; fali brands orcid &gt;}} First list item
+* {{&lt; fa brands orcid &gt;}} Second list item
+* {{&lt; fa brands orcid &gt;}} Third list item
+* The second last item
+* {{&lt; fali brands orcid  &gt;}} Last list item</code></pre>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ About the site
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../about.html">About</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../blog.html">Blog</a>
+  </li>  
+</ul>
+    </div>   
+      <div class="nav-footer-center">
+        <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ External
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://www.google.com">google</a>
+  </li>  
+</ul>
+      </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ Social
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/">
+      <i class="bi bi-twitter" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

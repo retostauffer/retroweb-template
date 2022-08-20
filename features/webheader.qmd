@@ -4,7 +4,7 @@ title: "Webheader"
 webheader:
     type: image
     images:
-        - image: header-images/unsplash-3.jpg
+        - image: ../header-images/unsplash-3.jpg
           alt: Header image for design purposes.
 ---
 
@@ -15,7 +15,7 @@ _Retoweb_ adds additional functionality to control the header of the website
 (thus, webheader). Two different types are available: `image` or `carousel`.
 When set, this will overrule quartos [title blocks](https://quarto.org/docs/authoring/title-blocks.html).
 
-The [index](index.qmd) page of the template shows a series of variations for
+The [index](../index.qmd) page of the template shows a series of variations for
 `type: carousel`. The webheader can be defined in the yml header of the
 individual `.qmd`.
 

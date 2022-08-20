@@ -41,14 +41,19 @@ This is the demo of the rendered
 {{< var theme.name >}} [template]({{< var links.rotorweb-template >}})
 a [Quarto]({{< var links.quarto >}}) [websites]({{< var.links.quarto-websites >}})
 using the {{< var theme.name >}} [theme extension]({{ links.rotorweb-ext >}}).
+The template renders the website into `docs/` and is ready for
+[github pages](https://pages.github.com/), see
+<https://retostauffer.github.io/retroweb-template/>.
 
 ## Features provided
 
-* [jQuery](jquery.qmd): Adds additional jQuery support.
-* [Webheader](webheader.qmd): Allows to add images, random images, and
+* [jQuery](features/jquery.qmd): Adds additional jQuery support.
+* [Webheader](features/webheader.qmd): Allows to add images, random images, and
   sequences of auto-rotating images to the header of the page.
-* [Block carousel](blockcarousel.qmd): Allows to add in-line image
+* [Block carousel](features/blockcarousel.qmd): Allows to add in-line image
   carousels.
+* [Fontawesome](features/fontawesome.qmd): Allows to add fontawesome icons
+  to the contend and create itemized lists with icons.
 
 
 ## Getting started
@@ -71,29 +76,5 @@ quarto render
 ```
 
 The website will be rendered into `docs/`.
-
-
-# Just some stuff; TODO(R)
-
-# Heading 1
-
-## Heading 2
-
-### Heading 3
-
-#### Heading 4
-
-:::: {.grid}
-::: {.g-col-3}
-Grid column width 3.
-:::
-::: {.g-col-9}
-Grid column width 9.
-:::
-::::
-
-
-
-
 
 

@@ -1,0 +1,152 @@
+---
+title: "Fontawesome"
+---
+
+
+{{< var theme.name >}} provides additional support for
+[fontawesome](https://fontawesome.com/) icons by adding two
+additional quarto shortcodes. A 'frozen' version of fontawesome
+is shipped with the [extension]({{< var links.rotorweb-ext >}}) to
+avoid cross-site includes. Check [`package.json`](https://github.com/retostauffer/rotorweb-ext/blob/main/package.json) to get the current version. This feature is inspired by the
+[Font Awesome Extension for Quarto](https://github.com/quarto-ext/fontawesome)
+by RStudio.
+
+
+
+### Available shortcodes
+
+Two shortcodes are available which providing the same options. Below a series
+of examples for both shortcodes are shown.
+
+| Shortcode             | Description                                                      |
+|:----------------------|:-----------------------------------------------------------------|
+| `{{{< fa ... >}}}`    | Creates in-line fontawesome icons.                               |
+| `{{{< fali ... >}}}`  | Allows to use fontawesome icons in itemized lists.               |
+
+### Shortcode options
+
+| Option                | Description                                                      |
+|:----------------------|:-----------------------------------------------------------------|
+| `...`                 | One or more strings to define the fontawesome icon and its size. |
+| `class`               | Adds additional custom classes for customization.                |
+| `color`               | Add custom color to the icon.                                    |
+
+Note that the icon definition (`...`) must be provided. If missing 
+(e.g., by using `{{{< fa >}}}` or `{{{< fali >}}}`)
+a warning is written to stdout and the following icon will be displayed:
+{{< fa solid skull color="red" >}}. Note that the
+
+### Icon examples
+
+Available icons can be searched via <https://fontawesome.com/icons>, only those
+included in the free plan will work.
+
+| Result | Shortcode                                           |
+|:-------|:----------------------------------------------------|
+| {{< fa solid comment >}} | `{{{< fa solid comment >}}}` |
+| {{< fa regular comment >}} | `{{{< fa regular comment >}}}` |
+| {{< fa solid code class="text-primary" >}} | `{{{< fa solid code class="text-primary" >}}}` |
+| {{< fa solid code class="text-secondary" >}} | `{{{< fa solid code class="text-secondary" >}}}` |
+| {{< fa solid code class="text-success" >}} | `{{{< fa solid code class="text-success" >}}}` |
+| {{< fa solid code class="text-danger" >}} | `{{{< fa solid code class="text-danger" >}}}` |
+| {{< fa solid code class="text-warning" >}} | `{{{< fa solid code class="text-warning" >}}}` |
+| {{< fa solid code class="text-info" >}} | `{{{< fa solid code class="text-info" >}}}` | | {{< fa solid droplet color="gray" >}} | `{{{< fa solid droplet color="gray" >}}}` |
+| {{< fa solid droplet color="#EC0AF0" >}} | `{{{< fa solid droplet color="#EC0AF0" >}}}` |
+| {{< fa solid droplet color="rgba(0, 255, 168, 0.5)" >}} | `{{{< fa solid droplet color="rgba(0, 255, 168, 0.5)" >}}}` |
+
+
+Adjusting icon size, more details can be found [here](https://fontawesome.com/docs/web/style/size).
+
+| Result | Shortcode                                           |
+|:-------|:----------------------------------------------------|
+| {{< fa regular image xs >}} | `{{{< fa regular image xs >}}}` |
+| {{< fa regular image sm >}} | `{{{< fa regular image sm >}}}` |
+| {{< fa regular image >}} | `{{{< fa regular image >}}}` (regular size) |
+| {{< fa regular image lg >}} | `{{{< fa regular image lg >}}}` |
+| {{< fa regular image xl >}} | `{{{< fa regular image xl >}}}` |
+| {{< fa regular image xl >}} | `{{{< fa regular image xl >}}}` |
+| {{< fa regular image 1x >}} | `{{{< fa regular image 1x >}}}` (regular size) |
+| {{< fa regular image 2x >}} | `{{{< fa regular image 2x >}}}` (twice as large as regular) |
+| {{< fa regular image 3x >}} | `{{{< fa regular image 3x >}}}` (three times bigger than regular) |
+
+
+### Using fontawesome icons for itemized lists
+
+
+**Example 1:** List with fontawesome icons (in-line icons; `{{{< fa >}}}`):
+
+* {{< fa solid lightbulb   color="#FFEB3B" >}} Idea
+* {{< fa solid code        color="#FF5722" >}} Development
+* {{< fa solid share-nodes color="#9C27B0" >}} Deployment
+
+Created by the following markup:
+
+```
+* {{{< fa solid lightbulb   color="#FFEB3B" >}}} Idea
+* {{{< fa solid code        color="#FF5722" >}}} Development
+* {{{< fa solid share-nodes color="#9C27B0" >}}} Deployment
+```
+
+
+**Example 2:** List with fontawesome list-icons (`{{{< fali >}}}`):
+
+* {{< fali solid lightbulb   color="#FFEB3B" >}} Idea
+* {{< fali solid code        color="#FF5722" >}} Development
+* {{< fali solid share-nodes color="#9C27B0" >}} Deployment
+
+Created by the following markup:
+
+```
+* {{{< fali solid lightbulb   color="#FFEB3B" >}}} Idea
+* {{{< fali solid code        color="#FF5722" >}}} Development
+* {{{< fali solid share-nodes color="#9C27B0" >}}} Deployment
+```
+
+
+**Example 3:** Using `class` instead of `color` argument:
+
+* {{< fali regular square-check class="text-primary"   >}} First list entry
+* {{< fali regular square-check class="text-primary"   >}} Second list entry
+* {{< fali regular square       class="text-secondary" >}} Last list entry
+
+Created by the following markup:
+
+```
+* {{{< fali regular square-check class="text-primary"   >}}} First list entry
+* {{{< fali regular square-check class="text-primary"   >}}} Second list entry
+* {{{< fali regular square       class="text-secondary" >}}} Last list entry
+```
+
+
+**Example 4:** The `{{{< fali >}}}` can be anywhere in the list entry and must not be at the beginning:
+
+* First list entry {{< fali regular square >}}
+* Second list entry {{< fali regular square-check >}}
+* Last list entry {{< fali regular square >}}
+
+Created by the following markup:
+
+```
+* First list entry {{{< fali regular square >}}}
+* Second list entry {{{< fali regular square-check >}}}
+* Last list entry {{{< fali regular square >}}}
+```
+
+
+**Example 5:** Itemis with in-line icons, no icons, or list icons can be mixed if needed:
+
+* {{< fali brands orcid >}} First list item
+* {{< fa brands orcid >}} Second list item
+* {{< fa brands orcid >}} Third list item
+* The second last item
+* {{< fali brands orcid  >}} Last list item
+
+Created by the following markup:
+
+```
+* {{{< fali brands orcid >}}} First list item
+* {{{< fa brands orcid >}}} Second list item
+* {{{< fa brands orcid >}}} Third list item
+* The second last item
+* {{{< fali brands orcid  >}}} Last list item
+```

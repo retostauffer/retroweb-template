@@ -4,7 +4,7 @@ title: "Block Carousel"
 webheader:
     type: image
     images:
-        - image: header-images/unsplash-1.jpg
+        - image: ../header-images/unsplash-1.jpg
           alt: Header image for design purposes.
 ---
 
@@ -27,25 +27,23 @@ The following two shortcodes create the carousels
 displayed below:
 
 ```
-{{{< blockcarousel header-images/unsplash-1.jpg header-images/unsplash-2.jpg id="block_carousel1" >}}}
-{{{< blockcarousel header-images/unsplash-3.jpg header-images/unsplash-4.jpg header-images/unsplash-5.jpg >}}}
+{{{< blockcarousel ../header-images/unsplash-1.jpg ../header-images/unsplash-2.jpg id="block_carousel1" >}}}
+{{{< blockcarousel ../header-images/unsplash-3.jpg ../header-images/unsplash-4.jpg ../header-images/unsplash-5.jpg >}}}
 ```
 
 ... creates the carousel shown below. The images are cycled automatically but can
 be navigated trough using the two buttons shown on the right/left of the image
 or via swiping.
 
-{{< blockcarousel header-images/unsplash-1.jpg header-images/unsplash-2.jpg id="block_carousel1" >}}
+{{< blockcarousel ../header-images/unsplash-1.jpg ../header-images/unsplash-2.jpg id="block_carousel1" >}}
 
-{{< blockcarousel header-images/unsplash-3.jpg header-images/unsplash-4.jpg header-images/unsplash-5.jpg >}}
+{{< blockcarousel ../header-images/unsplash-3.jpg ../header-images/unsplash-4.jpg ../header-images/unsplash-5.jpg >}}
 
 
 ::: {.callout-caution .simple}
 # Additional control arguments
 Currently there are no additonal options to control the behaviour
 of the carousel but might be added in the future
-(see [carousel options][bs5-carousel-options]).
+(see [carousel options](https://getbootstrap.com/docs/5.0/components/carousel/#options)).
 :::
 
-[bs5-carousel]: https://getbootstrap.com/docs/5.0/components/carousel
-[bs5-carousel-options]: https://getbootstrap.com/docs/5.0/components/carousel/#options

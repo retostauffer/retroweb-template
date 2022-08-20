@@ -4,7 +4,7 @@ title: "jQuery"
 webheader:
     type: image
     images:
-        - image: header-images/unsplash-4.jpg
+        - image: ../header-images/unsplash-4.jpg
           alt: Header image for design purposes.
 ---
 
@@ -16,6 +16,6 @@ To avoid cross-site loading - which would require user consent due to the Europe
 'frozen' version of jQuery is shipped with the
 [{{< var theme.name >}}]({{< var links.rotorweb-ext >}}) extension.
 Currently jQuery `3.6.0` is included
-(see [github](https://github.com/retostauffer/rotorweb-ext/tree/main/assets)).
+(see [package.json](https://github.com/retostauffer/rotorweb-ext/blob/main/package.json)).
 
 

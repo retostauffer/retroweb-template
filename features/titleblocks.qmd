@@ -10,8 +10,8 @@ webheader:
     type: image
     #type: carousel
     images:
-        - image: header-images/unsplash-2.jpg
-        - image: header-images/unsplash-3.jpg
+        - image: ../header-images/unsplash-2.jpg
+        - image: ../header-images/unsplash-3.jpg
 ---
 
 
@@ -19,11 +19,11 @@ webheader:
 quarto [title blocks](https://quarto.org/docs/authoring/title-blocks.html)
 in cases where a `title-block-banner` is set alongside with a `webheader` definition.
 
-If no [`webheader`](webheader.qmd) is specified, [Quarto]({{< var link.quarto >}})s
+If no [`webheader`](webheader.qmd) is specified, [Quarto]({{< var links.quarto >}})s
 [title blocks](https://quarto.org/docs/authoring/title-blocks.html) behaviour
 is preserved.
 
-**Example:** The page (`titleblocks.qmd`) you are looking at uses the following
+**Example:** The page (`features/titleblocks.qmd`) you are looking at uses the following
 configuration:
 
 ```

@@ -35,7 +35,7 @@ ul.task-list{list-style: none;}
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="site_libs/quarto-contrib/jquery-3.6.0/jquery.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -174,7 +174,6 @@ var rotorweb_webheader_options = {interval: 4000}
 
 
     $(document).ready(function() {
-            console.log(rotorweb_webheader_type)
         if (rotorweb_webheader_type == "carousel") {
             rotorweb_webheader_carousel()
         } else if (rotorweb_webheader_type == "image") {
@@ -183,8 +182,19 @@ var rotorweb_webheader_options = {interval: 4000}
     });
 })(jQuery);
 </script>
+<script>
+(function($) {
+    $(document).ready(function() {
+        var elems = $("ul > li .fa-li")
+        $.each(elems, function(k, v) {
+                $(v).closest("li").addClass("fali")
+        });
+    });
+})(jQuery);
+</script>
 
 
+<link rel="stylesheet" href="_extensions/rotorweb/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
 <meta property="og:title" content="Rotorweb - About">
 <meta property="og:description" content="The theme name Rotorweb has been chosen as it resembles many different aspects of why this theme has been created and who created it.">
 <meta property="og:site-name" content="Rotorweb">
@@ -215,20 +225,24 @@ var rotorweb_webheader_options = {interval: 4000}
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-features" role="button" data-bs-toggle="dropdown" aria-expanded="false">Features</a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-features">    
         <li>
-    <a class="dropdown-item" href="./webheader.html">
+    <a class="dropdown-item" href="./features/webheader.html">
  <span class="dropdown-text">Webheader</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./titleblocks.html">
+    <a class="dropdown-item" href="./features/titleblocks.html">
  <span class="dropdown-text">Title blocks</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./blockcarousel.html">
+    <a class="dropdown-item" href="./features/blockcarousel.html">
  <span class="dropdown-text">Block Carousel</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./jquery.html">
+    <a class="dropdown-item" href="./features/jquery.html">
  <span class="dropdown-text">jQuery</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./features/fontawesome.html">
+ <span class="dropdown-text">Fontawesome</span></a>
   </li>  
     </ul>
   </li>
