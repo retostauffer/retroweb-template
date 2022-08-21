@@ -26,6 +26,7 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./assets/logo-rotorweb-black.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -56,7 +57,7 @@ ul.task-list{list-style: none;}
   }
 }</script>
 <script>
-var rotorweb_webheader_images = [{image: 'header-images/unsplash-1.jpg', alt: 'just an image', title: null, description: null, icon: null, bg: null}, {image: 'header-images/unsplash-2.jpg', alt: 'another image', title: null, description: null, icon: null, bg: null}, {image: 'header-images/unsplash-3.jpg', alt: 'another image', title: null, description: null, icon: null, bg: null}, ];
+var rotorweb_webheader_images = [{image: 'header-images/unsplash-1.jpg', alt: 'Page header showing the websites logo on top of an artistic blueish background.', title: 'Image number one.', description: 'Full header with icon, title, description, and background color.', icon: 'assets/logo-rotorweb-white.svg', bg: 'rgba(255, 255, 255, 0.2)'}, {image: 'header-images/unsplash-2.jpg', alt: 'Page header image showing some stilized cubes in blueish color.', title: 'Second image with title, description, light background, without an icon.', description: 'This is just the caption', icon: null, bg: 'rgba(255, 255, 255, 0.1)'}, {image: 'header-images/unsplash-3.jpg', alt: 'Page header image showing a stylized keyboard in blueish color.', title: 'Image number three, title and background', description: null, icon: null, bg: 'rgba(255, 255, 255, 0.3)'}, {image: 'header-images/unsplash-4.jpg', alt: null, title: 'Seoncd last image: Title only', description: null, icon: null, bg: null}, {image: 'header-images/unsplash-5.jpg', alt: null, title: null, description: null, icon: null, bg: null}, ];
 var rotorweb_webheader_type = 'image'
 var rotorweb_webheader_options = {interval: 4000}
 </script>
@@ -75,6 +76,30 @@ var rotorweb_webheader_options = {interval: 4000}
            res = true; $(tmp).remove()
        }
        return res;
+    }
+
+    function webheader_add_content(x, rec) {
+        var grd = $("<div class='grid'></div>").appendTo($(x));
+
+        if (rec.icon === null) {
+            $("<div class='g-col-12'></div>").appendTo(grd)
+        } else {
+            $("<div class='g-col-2'>" +
+              "  <img class='icon' src='" + rec.icon + "'>" +
+              "</div>" +
+              "<div class='g-col-10'></div>").appendTo(grd)
+        } 
+
+        /* Appending title and caption, apply bakcground color (if specified ) */
+        if (rec.title) {
+            $("<div class='caption-title'></div>")
+                    .appendTo($(grd).children("div:last")).html(rec.title);
+        }
+        if (rec.description) {
+            $("<div class='caption-description'></div>")
+                    .appendTo($(grd).children("div:last")).html(rec.description);
+        }
+        if (rec.bg) { $(x).css("background-color", rec.bg) }
     }
 
     /* Add custom <header> element with id #rotorweb-title-block-header
@@ -118,30 +143,11 @@ var rotorweb_webheader_options = {interval: 4000}
 
             /* Adding title + caption or icon + title + caption (gridded) */
             var cap = $("<div class='carousel-caption d-none d-md-block'>" +
-                        "  <div class='container-fluid'>" +
-                        "    <div class='grid'></div>" +
-                        "  </div>" +
+                        "  <div class='container-fluid'></div>" +
                         "</div>").appendTo(tmp)
-            var grd = $(cap).find(".grid")
-            if (rec.icon === null) {
-                $("<div class='g-col-12'></div>").appendTo(grd)
-            } else {
-                $("<div class='g-col-2'>" +
-                  "  <img class='icon' src='" + rec.icon + "'>" +
-                  "</div>" +
-                  "<div class='g-col-10'></div>").appendTo(grd)
-            } 
 
-            /* Appending title and caption, apply bakcground color (if specified ) */
-            if (rec.title) {
-                $("<div class='caption-title'></div>")
-                        .appendTo($(grd).children("div:last")).html(rec.title);
-            }
-            if (rec.description) {
-                $("<div class='caption-description'></div>")
-                        .appendTo($(grd).children("div:last")).html(rec.description);
-            }
-            if (rec.bg) { $(cap).css("background-color", rec.bg) }
+            /* Appending possibly gridded content */
+            webheader_add_content(cap, rec)
 
             /* adding indicator */
             $("<button type='button' data-bs-target='#" + elemID +
@@ -168,8 +174,14 @@ var rotorweb_webheader_options = {interval: 4000}
         var fluid  = $("<div id='" + elemID + "' class='container-fluid webheader'></div>").insertBefore($("#quarto-content"));
         /* If there are multiple images defined: take random one */
         var idx = parseInt(Math.random() * rotorweb_webheader_images.length);
+        var rec = rotorweb_webheader_images[idx];
 
-        $("<img id='" + elemID + "' class = 'img-contained' src='" + rotorweb_webheader_images[idx].image + "'></img>").appendTo(fluid)
+        $("<img id='" + elemID + "' class = 'img-contained' src='" + rec.image + "'></img>").appendTo(fluid)
+        var cap = $("<div class='carousel-caption d-none d-md-block'></div>").appendTo(fluid)
+
+        /* Appending possibly gridded content */
+        webheader_add_content(cap, rec)
+
     }
 
 
@@ -438,6 +450,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </li>  
     <li class="nav-item">
     <a class="nav-link" href="./blog.html">Blog</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="./LICENSE.html">License</a>
   </li>  
 </ul>
     </div>   

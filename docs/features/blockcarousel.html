@@ -26,6 +26,7 @@ ul.task-list{list-style: none;}
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../assets/logo-rotorweb-black.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -77,6 +78,30 @@ var rotorweb_webheader_options = {interval: 4000}
        return res;
     }
 
+    function webheader_add_content(x, rec) {
+        var grd = $("<div class='grid'></div>").appendTo($(x));
+
+        if (rec.icon === null) {
+            $("<div class='g-col-12'></div>").appendTo(grd)
+        } else {
+            $("<div class='g-col-2'>" +
+              "  <img class='icon' src='" + rec.icon + "'>" +
+              "</div>" +
+              "<div class='g-col-10'></div>").appendTo(grd)
+        } 
+
+        /* Appending title and caption, apply bakcground color (if specified ) */
+        if (rec.title) {
+            $("<div class='caption-title'></div>")
+                    .appendTo($(grd).children("div:last")).html(rec.title);
+        }
+        if (rec.description) {
+            $("<div class='caption-description'></div>")
+                    .appendTo($(grd).children("div:last")).html(rec.description);
+        }
+        if (rec.bg) { $(x).css("background-color", rec.bg) }
+    }
+
     /* Add custom <header> element with id #rotorweb-title-block-header
      * for the webheader feature. For both, type: carousel and type: image.
      * Returns the element added for further processing */
@@ -118,30 +143,11 @@ var rotorweb_webheader_options = {interval: 4000}
 
             /* Adding title + caption or icon + title + caption (gridded) */
             var cap = $("<div class='carousel-caption d-none d-md-block'>" +
-                        "  <div class='container-fluid'>" +
-                        "    <div class='grid'></div>" +
-                        "  </div>" +
+                        "  <div class='container-fluid'></div>" +
                         "</div>").appendTo(tmp)
-            var grd = $(cap).find(".grid")
-            if (rec.icon === null) {
-                $("<div class='g-col-12'></div>").appendTo(grd)
-            } else {
-                $("<div class='g-col-2'>" +
-                  "  <img class='icon' src='" + rec.icon + "'>" +
-                  "</div>" +
-                  "<div class='g-col-10'></div>").appendTo(grd)
-            } 
 
-            /* Appending title and caption, apply bakcground color (if specified ) */
-            if (rec.title) {
-                $("<div class='caption-title'></div>")
-                        .appendTo($(grd).children("div:last")).html(rec.title);
-            }
-            if (rec.description) {
-                $("<div class='caption-description'></div>")
-                        .appendTo($(grd).children("div:last")).html(rec.description);
-            }
-            if (rec.bg) { $(cap).css("background-color", rec.bg) }
+            /* Appending possibly gridded content */
+            webheader_add_content(cap, rec)
 
             /* adding indicator */
             $("<button type='button' data-bs-target='#" + elemID +
@@ -168,8 +174,14 @@ var rotorweb_webheader_options = {interval: 4000}
         var fluid  = $("<div id='" + elemID + "' class='container-fluid webheader'></div>").insertBefore($("#quarto-content"));
         /* If there are multiple images defined: take random one */
         var idx = parseInt(Math.random() * rotorweb_webheader_images.length);
+        var rec = rotorweb_webheader_images[idx];
 
-        $("<img id='" + elemID + "' class = 'img-contained' src='" + rotorweb_webheader_images[idx].image + "'></img>").appendTo(fluid)
+        $("<img id='" + elemID + "' class = 'img-contained' src='" + rec.image + "'></img>").appendTo(fluid)
+        var cap = $("<div class='carousel-caption d-none d-md-block'></div>").appendTo(fluid)
+
+        /* Appending possibly gridded content */
+        webheader_add_content(cap, rec)
+
     }
 
 
@@ -301,7 +313,7 @@ var rotorweb_webheader_options = {interval: 4000}
 {{&lt; blockcarousel ../header-images/unsplash-3.jpg ../header-images/unsplash-4.jpg ../header-images/unsplash-5.jpg &gt;}}</code></pre>
 <p>… creates the carousel shown below. The images are cycled automatically but can be navigated trough using the two buttons shown on the right/left of the image or via swiping.</p>
 <p></p><div id="block_carousel1" class="carousel slide" data-bs-ride="carousel">  <div class="carousel-inner"><div class="carousel-item active">  <img src="../header-images/unsplash-1.jpg" class="d-block w-100"></div><div class="carousel-item">  <img src="../header-images/unsplash-2.jpg" class="d-block w-100"></div>  </div>  <button class="carousel-control-prev" type="button" data-bs-target="#block_carousel1" data-bs-slide="prev">    <span class="carousel-control-prev-icon" aria-hidden="true"></span>    <span class="visually-hidden">Previous</span>  </button>  <button class="carousel-control-next" type="button" data-bs-target="#block_carousel1" data-bs-slide="next">    <span class="carousel-control-next-icon" aria-hidden="true"></span>    <span class="visually-hidden">Next</span>  </button></div><p></p>
-<p></p><div id="carousel-qtjyja" class="carousel slide" data-bs-ride="carousel">  <div class="carousel-inner"><div class="carousel-item active">  <img src="../header-images/unsplash-3.jpg" class="d-block w-100"></div><div class="carousel-item">  <img src="../header-images/unsplash-4.jpg" class="d-block w-100"></div><div class="carousel-item">  <img src="../header-images/unsplash-5.jpg" class="d-block w-100"></div>  </div>  <button class="carousel-control-prev" type="button" data-bs-target="#carousel-qtjyja" data-bs-slide="prev">    <span class="carousel-control-prev-icon" aria-hidden="true"></span>    <span class="visually-hidden">Previous</span>  </button>  <button class="carousel-control-next" type="button" data-bs-target="#carousel-qtjyja" data-bs-slide="next">    <span class="carousel-control-next-icon" aria-hidden="true"></span>    <span class="visually-hidden">Next</span>  </button></div><p></p>
+<p></p><div id="carousel-ygtztk" class="carousel slide" data-bs-ride="carousel">  <div class="carousel-inner"><div class="carousel-item active">  <img src="../header-images/unsplash-3.jpg" class="d-block w-100"></div><div class="carousel-item">  <img src="../header-images/unsplash-4.jpg" class="d-block w-100"></div><div class="carousel-item">  <img src="../header-images/unsplash-5.jpg" class="d-block w-100"></div>  </div>  <button class="carousel-control-prev" type="button" data-bs-target="#carousel-ygtztk" data-bs-slide="prev">    <span class="carousel-control-prev-icon" aria-hidden="true"></span>    <span class="visually-hidden">Previous</span>  </button>  <button class="carousel-control-next" type="button" data-bs-target="#carousel-ygtztk" data-bs-slide="next">    <span class="carousel-control-next-icon" aria-hidden="true"></span>    <span class="visually-hidden">Next</span>  </button></div><p></p>
 <div class="callout-caution simple callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -431,6 +443,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </li>  
     <li class="nav-item">
     <a class="nav-link" href="../blog.html">Blog</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../LICENSE.html">License</a>
   </li>  
 </ul>
     </div>   

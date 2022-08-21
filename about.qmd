@@ -7,14 +7,27 @@ webheader:
     # show a random one each time the page is loaded
     images:
         - image: header-images/unsplash-1.jpg
-          alt: just an image
-          caption: "Image number one."
+          title: "Image number one."
+          description: "Full header with icon, title, description, and background color."
+          alt: Page header showing the websites logo on top of an artistic blueish background.
+          bg: "rgba(255, 255, 255, 0.2)"
+          icon: assets/logo-rotorweb-white.svg
+
         - image: header-images/unsplash-2.jpg
-          alt: another image
-          caption: "Image number two."
+          title: "Second image with title, description, light background, without an icon."
+          description: "This is just the caption"
+          alt: Page header image showing some stilized cubes in blueish color.
+          bg: "rgba(255, 255, 255, 0.1)"
+
         - image: header-images/unsplash-3.jpg
-          alt: another image
-          caption: "Image number three."
+          title: "Image number three, title and background"
+          alt: Page header image showing a stylized keyboard in blueish color.
+          bg: "rgba(255, 255, 255, 0.3)"
+
+        - image: header-images/unsplash-4.jpg
+          title: "Seoncd last image: Title only"
+
+        - image: header-images/unsplash-5.jpg
 ---
 
 
