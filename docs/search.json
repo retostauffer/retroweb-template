@@ -60,7 +60,7 @@
     "href": "blog.html",
     "title": "Rotorweb Blog",
     "section": "",
-    "text": "news\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nAug 18, 2022\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 15, 2022\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "news\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nAug 18, 2022\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\nExcepturi nobis expedita et perspiciatis. Consequatur voluptatem recusandae commodi consequatur tenetur repellendus. Ullam qui laborum voluptatem cupiditate quia rerum amet omnis. Cupiditate magni at eligendi aut est ex numquam at.\n\n\n\n\n\n\nAug 15, 2022\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -70,11 +70,18 @@
     "text": "This is the demo of the rendered Rotorweb template a Quarto websites using the Rotorweb theme extension. The template renders the website into docs/ and is ready for github pages, see https://retostauffer.github.io/retroweb-template/."
   },
   {
-    "objectID": "index.html#features-provided",
-    "href": "index.html#features-provided",
+    "objectID": "index.html#latest-news",
+    "href": "index.html#latest-news",
     "title": "Rotorweb Template & Demo",
-    "section": "Features provided",
-    "text": "Features provided\n\njQuery: Adds additional jQuery support.\nWebheader: Allows to add images, random images, and sequences of auto-rotating images to the header of the page.\nBlock carousel: Allows to add in-line image carousels.\nFontawesome: Allows to add fontawesome icons to the contend and create itemized lists with icons."
+    "section": "Latest news",
+    "text": "Latest news\n\n\n\n\n    Welcome To My Blog\n\n\n    Excepturi nobis expedita et perspiciatis. Consequatur voluptatem recusandae\ncommodi consequatur tenetur repellendus. Ullam qui laborum voluptatem\ncupiditate quia rerum amet omnis. Cupiditate magni at eligendi aut est ex\nnumquam at.\n    Read\n\n\n\n\n  \n      \n        \n          Aug 18, 2022\n          Post With Code\n        \n      \n  \n\nRead more \n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#theme-features",
+    "href": "index.html#theme-features",
+    "title": "Rotorweb Template & Demo",
+    "section": "Theme features",
+    "text": "Theme features"
   },
   {
     "objectID": "index.html#getting-started",

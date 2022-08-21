@@ -1,0 +1,34 @@
+```{=html}
+<!-- must be here for no reason -->
+```
+
+## Latest news
+
+```{=html}
+<!-- show long version of first item -->
+<div>
+<h4 class='listing-latest-title'>
+    <a href='<%= items[0].path %>' target='_self'><%= items[0].title %></a>
+</h4>
+<div class='listing-latest-abstract'>
+    <%= items[0].abstract %>
+    <a href='<%= items[0].path %>' target='_self'>Read</a>
+</div>
+<% //console.log(items[0]) %>
+</div>
+<!-- building table for consecutive items -->
+<table class='table'>
+  <tbody>
+    <% for (i = 1; i < items.length; i++) { %>
+      <tr>
+        <td>
+          <div class='listing-date'><%= items[i].date %></div>
+          <a href="<%- items[i].path %>"><%= items[i].title %></a>
+        </td>
+      </tr>
+    <% } %>
+  </tbody>
+</table>
+```
+
+[[Read more {{< fa solid angles-right >}}]{.text-primary style='display: inline-block; width: 100%; text-align: right;'}](blog.qmd)

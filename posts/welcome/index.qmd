@@ -3,6 +3,11 @@ title: "Welcome To My Blog"
 author: "Tristan O'Malley"
 date: "2022-08-15"
 categories: [news]
+abstract: |
+    Excepturi nobis expedita et perspiciatis. Consequatur voluptatem recusandae
+    commodi consequatur tenetur repellendus. Ullam qui laborum voluptatem
+    cupiditate quia rerum amet omnis. Cupiditate magni at eligendi aut est ex
+    numquam at.
 ---
 
 This is the first post in a Quarto blog. Welcome!

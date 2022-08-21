@@ -1,10 +1,8 @@
 ---
 title: Rotorweb Template & Demo
 
-margin-header: |
-    ![](assets/logo-rotorweb-black.svg)
-
-title-block-banner: false
+###margin-header: |
+###    ![](assets/logo-rotorweb-black.svg)
 
 webheader:
     type: carousel
@@ -34,6 +32,20 @@ webheader:
           title: "Seoncd last image: Title only"
 
         - image: header-images/unsplash-5.jpg
+
+listing:
+    contents: posts
+    id: latest-news
+    template: latest-news.ejs
+    type: table
+    max-items: 4
+    sort-ui: false
+    filter-ui: false
+    fields:
+        - title
+    sort:
+        - "date"
+        - "title desc"
 ---
 
 
@@ -45,8 +57,14 @@ The template renders the website into `docs/` and is ready for
 [github pages](https://pages.github.com/), see
 <https://retostauffer.github.io/retroweb-template/>.
 
-## Features provided
-
+:::::: {.grid}
+::::: {.g-col-6}
+:::: {#latest-news}
+::::
+:::::
+::::: {.g-col-6}
+## Theme features
+#
 * [jQuery](features/jquery.qmd): Adds additional jQuery support.
 * [Webheader](features/webheader.qmd): Allows to add images, random images, and
   sequences of auto-rotating images to the header of the page.
@@ -54,6 +72,8 @@ The template renders the website into `docs/` and is ready for
   carousels.
 * [Fontawesome](features/fontawesome.qmd): Allows to add fontawesome icons
   to the contend and create itemized lists with icons.
+:::::
+::::::
 
 
 ## Getting started
