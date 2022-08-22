@@ -81,7 +81,7 @@
     "href": "index.html#theme-features",
     "title": "Rotorweb Template & Demo",
     "section": "Theme features",
-    "text": "Theme features"
+    "text": "Theme features\n\n\n\n  \n      \n        \n          Block Carousel: Content carousels.\n        \n      \n      \n        \n          Fontawesome: Icon support.\n        \n      \n      \n        \n          Webheader: Rotating/random headers.\n        \n      \n      \n        \n          jQuery: Adding jQuery support.\n        \n      \n  \n\n\nNo matching items"
   },
   {
     "objectID": "index.html#getting-started",
@@ -95,6 +95,6 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Why Rotorweb?\nThe theme name Rotorweb has been chosen as it resembles many different aspects of why this theme has been created and who created it.\nOne of the main goal was to develop a Quarto website theme which allows us to replace existing sites. One of the features missing were the ‘rotating header images’, thus the name Rotorweb.\nIn addition, R is the first letter of the first name of the authors first name and one of his preferred programming languages: R.\nMoreover, migrating to Quarto for most dynamic documents allows to ‘lift’ efficiency (and simplicity) to the next level as we can now streamline the creation of websites, presentations, exercises and documents using one single framework combining written documents, but also documents using code execution in R, Python and Julia."
+    "text": "Author\n\n\n\nName\nReto Stauffer\n\n\nAffiliation\nDepartment of Statistics and Digital Science Center, Universität Innsbruck, Austria\n\n\nWebsite\nhttps://retostauffer.org\n\n\nGithub\nhttps://github.com/retostauffer\n\n\nTwitter\nhttps://twitter.com/retostauffer2"
   }
 ]

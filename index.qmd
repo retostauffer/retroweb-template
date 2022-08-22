@@ -34,18 +34,24 @@ webheader:
         - image: header-images/unsplash-5.jpg
 
 listing:
-    contents: posts
-    id: latest-news
-    template: latest-news.ejs
-    type: table
-    max-items: 4
-    sort-ui: false
-    filter-ui: false
-    fields:
-        - title
-    sort:
-        - "date"
-        - "title desc"
+    - id: latest-news
+      contents: posts
+      template: ejs/latest-news.ejs
+      type: table
+      max-items: 4
+      sort-ui: false
+      filter-ui: false
+      sort:
+          - "date"
+          - "title desc"
+    - id: rotorweb-features
+      contents: features
+      template: ejs/rotorweb-features.ejs
+      type: table
+      sort-ui: false
+      filter-ui: false
+      max-items: 1000
+      sort: title
 ---
 
 
@@ -63,15 +69,8 @@ The template renders the website into `docs/` and is ready for
 ::::
 :::::
 ::::: {.g-col-6}
-## Theme features
-#
-* [jQuery](features/jquery.qmd): Adds additional jQuery support.
-* [Webheader](features/webheader.qmd): Allows to add images, random images, and
-  sequences of auto-rotating images to the header of the page.
-* [Block carousel](features/blockcarousel.qmd): Allows to add in-line image
-  carousels.
-* [Fontawesome](features/fontawesome.qmd): Allows to add fontawesome icons
-  to the contend and create itemized lists with icons.
+:::: {#rotorweb-features}
+::::
 :::::
 ::::::
 

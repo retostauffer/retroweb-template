@@ -1,0 +1,29 @@
+```{=html}
+<!-- must be here for no reason -->
+```
+
+## Theme features
+
+```{=html}
+<!-- building table for consecutive items -->
+<table class='table listings-table'>
+  <tbody>
+    <% for (const i in items) {
+      // Filter for qmds assigned to category 'feature' 
+      var found = false;
+      for (const ic in items[i].categories) {
+        if (items[i].categories[ic] == "feature") { found = true; }
+      }
+      // If it belongs to the category 'features': show
+      if (found == true) { %>
+      <tr>
+        <td>
+          <a href="<%- items[i].path %>"><%= items[i].title %></a>: <%= items[i].summary %>
+        </td>
+      </tr>
+      <% } %>
+    <% } %>
+  </tbody>
+</table>
+```
+

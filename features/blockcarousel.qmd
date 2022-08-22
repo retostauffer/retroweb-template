@@ -1,5 +1,9 @@
 ---
 title: "Block Carousel"
+summary: Content carousels.
+author: Reto Stauffer
+date: 2022-08-18
+categories: [rotorweb, feature]
 
 webheader:
     type: image

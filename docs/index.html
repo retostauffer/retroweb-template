@@ -68,13 +68,41 @@ ul.task-list{list-style: none;}
     }
 
     const options = {
-      valueNames: ['listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] }],
+      valueNames: ['listing-freeze','listing-title-block-banner','listing-title','listing-author','listing-date','listing-categories','listing-abstract','listing-path','listing-image','listing-description','listing-filename','listing-file-modified','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] }],
       
       searchColumns: ["listing-freeze","listing-title-block-banner","listing-title","listing-author","listing-date","listing-categories","listing-abstract","listing-path","listing-image","listing-description","listing-filename","listing-file-modified","listing-reading-time"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
     window['quarto-listings']['listing-latest-news'] = new List('listing-latest-news', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-rotorweb-features .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-freeze','listing-title-block-style','listing-title-block-banner','listing-title','listing-summary','listing-author','listing-date','listing-categories','listing-webheader','listing-path','listing-description','listing-filename','listing-file-modified','listing-reading-time','listing-title-block-banner-color',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] }],
+      
+      searchColumns: ["listing-freeze","listing-title-block-style","listing-title-block-banner","listing-title","listing-summary","listing-author","listing-date","listing-categories","listing-webheader","listing-path","listing-description","listing-filename","listing-file-modified","listing-reading-time","listing-title-block-banner-color"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-rotorweb-features'] = new List('listing-rotorweb-features', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -269,6 +297,14 @@ var rotorweb_webheader_options = {interval: 30000}
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-features" role="button" data-bs-toggle="dropdown" aria-expanded="false">Features</a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-features">    
         <li>
+    <a class="dropdown-item" href="./features/blockcarousel.html">
+ <span class="dropdown-text">Block Carousel</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./features/fontawesome.html">
+ <span class="dropdown-text">Fontawesome</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="./features/webheader.html">
  <span class="dropdown-text">Webheader</span></a>
   </li>  
@@ -277,16 +313,8 @@ var rotorweb_webheader_options = {interval: 30000}
  <span class="dropdown-text">Title blocks</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./features/blockcarousel.html">
- <span class="dropdown-text">Block Carousel</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="./features/jquery.html">
  <span class="dropdown-text">jQuery</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./features/fontawesome.html">
- <span class="dropdown-text">Fontawesome</span></a>
   </li>  
     </ul>
   </li>
@@ -356,7 +384,7 @@ numquam at.
 </div>
 </div>
 <!-- building table for consecutive items -->
-<table class="table">
+<table class="table listings-table">
   <tbody>
       <tr>
         <td>
@@ -374,18 +402,41 @@ No matching items
 </div>
 </div>
 <div class="g-col-6">
+<div id="listing-rotorweb-features" class="quarto-listing quarto-listing-container-custom">
+<!-- must be here for no reason -->
 <section id="theme-features" class="level2">
 <h2 class="anchored" data-anchor-id="theme-features">Theme features</h2>
+
+<!-- building table for consecutive items -->
+<table class="table listings-table">
+  <tbody>
+      <tr>
+        <td>
+          <a href="./features/blockcarousel.html">Block Carousel</a>: Content carousels.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="./features/fontawesome.html">Fontawesome</a>: Icon support.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="./features/webheader.html">Webheader</a>: Rotating/random headers.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="./features/jquery.html">jQuery</a>: Adding jQuery support.
+        </td>
+      </tr>
+  </tbody>
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
 </section>
-<section id="section" class="level1">
-<h1></h1>
-<ul>
-<li><a href="./features/jquery.html">jQuery</a>: Adds additional jQuery support.</li>
-<li><a href="./features/webheader.html">Webheader</a>: Allows to add images, random images, and sequences of auto-rotating images to the header of the page.</li>
-<li><a href="./features/blockcarousel.html">Block carousel</a>: Allows to add in-line image carousels.</li>
-<li><a href="./features/fontawesome.html">Fontawesome</a>: Allows to add fontawesome icons to the contend and create itemized lists with icons.</li>
-</ul>
-</section>
+</div>
 </div>
 </div>
 <section id="getting-started" class="level2">

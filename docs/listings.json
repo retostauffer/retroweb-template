@@ -10,7 +10,12 @@
     "listing": "/index.html",
     "items": [
       "/posts/welcome/index.html",
-      "/posts/post-with-code/index.html"
+      "/posts/post-with-code/index.html",
+      "/features/blockcarousel.html",
+      "/features/fontawesome.html",
+      "/features/titleblocks.html",
+      "/features/webheader.html",
+      "/features/jquery.html"
     ]
   }
 ]

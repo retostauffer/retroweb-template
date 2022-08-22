@@ -1,5 +1,9 @@
 ---
 title: "jQuery"
+summary: Adding jQuery support.
+author: Reto Stauffer
+date: 2022-08-18
+categories: [rotorweb, feature]
 
 webheader:
     type: image

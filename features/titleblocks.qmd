@@ -1,14 +1,12 @@
 ---
 title: Title blocks
+author: Reto Stauffer
 
 title-block-banner: header-images/unsplash-1.jpg
 title-block-banner-color: yellow
-author: Reto Stauffer
-affiliation: Universität Innsbruck
 
 webheader:
     type: image
-    #type: carousel
     images:
         - image: ../header-images/unsplash-2.jpg
         - image: ../header-images/unsplash-3.jpg

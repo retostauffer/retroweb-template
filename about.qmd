@@ -31,6 +31,11 @@ webheader:
 ---
 
 
+{{< var theme.name >}}: An uplifting template for Quarto websites, providing
+rotating header images, in-line image carousels, and other useful additions and
+extensions ([jQuery](features/jquery.qmd), [Fontawesome](features/fontawesome.qmd), ...).
+
+
 ### Author
 
 
@@ -47,6 +52,7 @@ webheader:
 +-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
+<!--
 ### Why {{< var theme.name >}}?
 
 The theme name {{< var theme.name >}} has been chosen as it resembles
@@ -65,4 +71,4 @@ streamline the creation of websites, presentations, exercises and documents
 using one single framework combining written documents, but also documents
 using code execution in [_R_]({{< var links.r }}), [Python]({{< var.links.python >}}) and
 [Julia]({{< var links.julia >}}).
-
+-->

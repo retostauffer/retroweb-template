@@ -18,11 +18,11 @@ website:
         text: Home
       - text: Features
         menu:
+          - href: features/blockcarousel.qmd
+          - href: features/fontawesome.qmd
           - href: features/webheader.qmd
           - href: features/titleblocks.qmd
-          - href: features/blockcarousel.qmd
           - href: features/jquery.qmd
-          - href: features/fontawesome.qmd
       - href: blog.qmd
         text: Blog
 
