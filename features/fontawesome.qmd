@@ -38,7 +38,7 @@ of examples for both shortcodes are shown.
 Note that the icon definition (`...`) must be provided. If missing 
 (e.g., by using `{{{< fa >}}}` or `{{{< fali >}}}`)
 a warning is written to stdout and the following icon will be displayed:
-{{< fa solid skull color="red" >}}. Note that the
+{{< fa solid skull color="red" >}}.
 
 ### Icon examples
 
