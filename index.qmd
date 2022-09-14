@@ -8,7 +8,7 @@ webheader:
     type: carousel
     # currently only allows to set the interval; default is 2000ms
     options:
-        interval: 30000
+        interval: 3000
     images:
         - image: header-images/unsplash-1.jpg
           title: "Image number one."
