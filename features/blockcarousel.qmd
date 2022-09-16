@@ -17,12 +17,10 @@ webheader:
 
 {{< var theme.name >}}  provides a shortcode to create in-line block image
 slideshows (or block carousels). The shortcode `{{{< blockcarousel >}}}`
-takes up a series of images to be displayed. In addition, the
-argument `id=[elementId]` can be set to add a unique user defined HTML element ID to
-the carousel. If not specified, a random ID is added.
+takes up a series of images to be displayed.
 
 ```
-{{{< blockcarousel [image1] [image2] ... id=[elementId] >}}}
+{{{< blockcarousel [image1] [image2] ... [options] >}}}
 ```
 
 ### Example
@@ -31,7 +29,7 @@ The following two shortcodes create the carousels
 displayed below:
 
 ```
-{{{< blockcarousel ../header-images/unsplash-1.jpg ../header-images/unsplash-2.jpg id="block_carousel1" >}}}
+{{{< blockcarousel ../header-images/unsplash-1.jpg ../header-images/unsplash-2.jpg >}}}
 {{{< blockcarousel ../header-images/unsplash-3.jpg ../header-images/unsplash-4.jpg ../header-images/unsplash-5.jpg >}}}
 ```
 
@@ -39,15 +37,36 @@ displayed below:
 be navigated trough using the two buttons shown on the right/left of the image
 or via swiping.
 
-{{< blockcarousel ../header-images/unsplash-1.jpg ../header-images/unsplash-2.jpg id="block_carousel1" >}}
+{{< blockcarousel ../header-images/unsplash-1.jpg ../header-images/unsplash-2.jpg >}}
 
 {{< blockcarousel ../header-images/unsplash-3.jpg ../header-images/unsplash-4.jpg ../header-images/unsplash-5.jpg >}}
 
 
-::: {.callout-caution .simple}
-# Additional control arguments
-Currently there are no additonal options to control the behaviour
-of the carousel but might be added in the future
-(see [carousel options](https://getbootstrap.com/docs/5.0/components/carousel/#options)).
-:::
+### Additional arguments
+
+A series of additional options are available which can be specified via `key=value`
+pairs when setting up the inline block carousel. Besides `id` all options are
+directly forwarded to the bootstrap carouse, for more details see
+[bootstrap 5.0 carousel options](https://getbootstrap.com/docs/5.0/components/carousel/#options).
+
+| Name      | Type     | Default  | Description                               |
+|:----------|:---------|:---------|:------------------------------------------|
+| `id`      | string   | _random_ | ID of the HTML element. By default, a random ID is generated. |
+| `interval` | string  | `5000`   | Amount of time (milliseconds) to delay between automatically cycling an item. |
+| `keyboard` | boolean | `false`   | Whether the carousel should react to keyboard events. |
+| `pause`    | string or boolean | `hover` | Default is to pause cycling when the mouse cursor is over the carousel. |
+| `ride`    | string or boolean | `carousel` | By default, the carousel is on autoplay. |
+| `wrap`    | boolean | `true` | Continuous cycling by default, can be set to `false` for hard stops. |
+| `touch`   | boolean | `true` | Can be set to `false` to disable swiping on touchscreen devices. |
+
+
+Example block carousel with all options explicitly specified. Besides `id` and `interval`
+all options are set to default.
+
+```
+{{{< blockcarousel ../header-images/unsplash-1.jpg ../header-images/unsplash-2.jpg id="block_carousel1" interval=1000 keyboard=true pause=hover ride=carousel wrap=true touch=true >}}}
+```
+
+{{< blockcarousel ../header-images/unsplash-1.jpg ../header-images/unsplash-2.jpg id="block_carousel1" interval=1000 keyboard=true pause=hover ride=carousel wrap=true touch=true >}}
+
 

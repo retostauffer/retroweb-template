@@ -64,6 +64,7 @@ var rotorweb_webheader_options = {interval: 4000}
 </script>
 
 
+<link rel="stylesheet" href="../_extensions/rotorweb/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
 <meta property="og:title" content="Rotorweb - Block Carousel">
 <meta property="og:description" content="Rotorweb provides a shortcode to create in-line block image slideshows (or block carousels). The shortcode {{< blockcarousel >}} takes up a series of images to be displayed.">
 <meta property="og:site-name" content="Rotorweb">
@@ -146,29 +147,83 @@ var rotorweb_webheader_options = {interval: 4000}
 
 <section id="block-carousel" class="level2">
 <h2 class="anchored" data-anchor-id="block-carousel">Block carousel</h2>
-<p>Rotorweb provides a shortcode to create in-line block image slideshows (or block carousels). The shortcode <code>{{&lt; blockcarousel &gt;}}</code> takes up a series of images to be displayed. In addition, the argument <code>id=[elementId]</code> can be set to add a unique user defined HTML element ID to the carousel. If not specified, a random ID is added.</p>
-<pre><code>{{&lt; blockcarousel [image1] [image2] ... id=[elementId] &gt;}}</code></pre>
+<p>Rotorweb provides a shortcode to create in-line block image slideshows (or block carousels). The shortcode <code>{{&lt; blockcarousel &gt;}}</code> takes up a series of images to be displayed.</p>
+<pre><code>{{&lt; blockcarousel [image1] [image2] ... [options] &gt;}}</code></pre>
 <section id="example" class="level3">
 <h3 class="anchored" data-anchor-id="example">Example</h3>
 <p>The following two shortcodes create the carousels displayed below:</p>
-<pre><code>{{&lt; blockcarousel ../header-images/unsplash-1.jpg ../header-images/unsplash-2.jpg id="block_carousel1" &gt;}}
+<pre><code>{{&lt; blockcarousel ../header-images/unsplash-1.jpg ../header-images/unsplash-2.jpg &gt;}}
 {{&lt; blockcarousel ../header-images/unsplash-3.jpg ../header-images/unsplash-4.jpg ../header-images/unsplash-5.jpg &gt;}}</code></pre>
 <p>… creates the carousel shown below. The images are cycled automatically but can be navigated trough using the two buttons shown on the right/left of the image or via swiping.</p>
-<p></p><div id="block_carousel1" class="carousel slide" data-bs-ride="carousel">  <div class="carousel-inner"><div class="carousel-item active">  <img src="../header-images/unsplash-1.jpg" class="d-block w-100"></div><div class="carousel-item">  <img src="../header-images/unsplash-2.jpg" class="d-block w-100"></div>  </div>  <button class="carousel-control-prev" type="button" data-bs-target="#block_carousel1" data-bs-slide="prev">    <span class="carousel-control-prev-icon" aria-hidden="true"></span>    <span class="visually-hidden">Previous</span>  </button>  <button class="carousel-control-next" type="button" data-bs-target="#block_carousel1" data-bs-slide="next">    <span class="carousel-control-next-icon" aria-hidden="true"></span>    <span class="visually-hidden">Next</span>  </button></div><p></p>
-<p></p><div id="carousel-zrlthy" class="carousel slide" data-bs-ride="carousel">  <div class="carousel-inner"><div class="carousel-item active">  <img src="../header-images/unsplash-3.jpg" class="d-block w-100"></div><div class="carousel-item">  <img src="../header-images/unsplash-4.jpg" class="d-block w-100"></div><div class="carousel-item">  <img src="../header-images/unsplash-5.jpg" class="d-block w-100"></div>  </div>  <button class="carousel-control-prev" type="button" data-bs-target="#carousel-zrlthy" data-bs-slide="prev">    <span class="carousel-control-prev-icon" aria-hidden="true"></span>    <span class="visually-hidden">Previous</span>  </button>  <button class="carousel-control-next" type="button" data-bs-target="#carousel-zrlthy" data-bs-slide="next">    <span class="carousel-control-next-icon" aria-hidden="true"></span>    <span class="visually-hidden">Next</span>  </button></div><p></p>
-<div class="callout-caution simple callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Additional control arguments
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Currently there are no additonal options to control the behaviour of the carousel but might be added in the future (see <a href="https://getbootstrap.com/docs/5.0/components/carousel/#options">carousel options</a>).</p>
-</div>
-</div>
+<p></p><div id="carousel-mudaqo" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" data-bs-keyboard="false" data-bs-pause="hover" data-bs-wrap="true" data-bs-touch="true">  <div class="carousel-inner"><div class="carousel-item active">  <img src="../header-images/unsplash-1.jpg" class="d-block w-100"></div><div class="carousel-item">  <img src="../header-images/unsplash-2.jpg" class="d-block w-100"></div>  </div>  <button class="carousel-control-prev" type="button" data-bs-target="#carousel-mudaqo" data-bs-slide="prev">    <span class="carousel-control-prev-icon" aria-hidden="true"></span>    <span class="visually-hidden">Previous</span>  </button>  <button class="carousel-control-next" type="button" data-bs-target="#carousel-mudaqo" data-bs-slide="next">    <span class="carousel-control-next-icon" aria-hidden="true"></span>    <span class="visually-hidden">Next</span>  </button></div><p></p>
+<p></p><div id="carousel-itnxch" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" data-bs-keyboard="false" data-bs-pause="hover" data-bs-wrap="true" data-bs-touch="true">  <div class="carousel-inner"><div class="carousel-item active">  <img src="../header-images/unsplash-3.jpg" class="d-block w-100"></div><div class="carousel-item">  <img src="../header-images/unsplash-4.jpg" class="d-block w-100"></div><div class="carousel-item">  <img src="../header-images/unsplash-5.jpg" class="d-block w-100"></div>  </div>  <button class="carousel-control-prev" type="button" data-bs-target="#carousel-itnxch" data-bs-slide="prev">    <span class="carousel-control-prev-icon" aria-hidden="true"></span>    <span class="visually-hidden">Previous</span>  </button>  <button class="carousel-control-next" type="button" data-bs-target="#carousel-itnxch" data-bs-slide="next">    <span class="carousel-control-next-icon" aria-hidden="true"></span>    <span class="visually-hidden">Next</span>  </button></div><p></p>
+</section>
+<section id="additional-arguments" class="level3">
+<h3 class="anchored" data-anchor-id="additional-arguments">Additional arguments</h3>
+<p>A series of additional options are available which can be specified via <code>key=value</code> pairs when setting up the inline block carousel. Besides <code>id</code> all options are directly forwarded to the bootstrap carouse, for more details see <a href="https://getbootstrap.com/docs/5.0/components/carousel/#options">bootstrap 5.0 carousel options</a>.</p>
+<table class="table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 58%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"><em>random</em></td>
+<td style="text-align: left;">ID of the HTML element. By default, a random ID is generated.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>interval</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"><code>5000</code></td>
+<td style="text-align: left;">Amount of time (milliseconds) to delay between automatically cycling an item.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>keyboard</code></td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: left;"><code>false</code></td>
+<td style="text-align: left;">Whether the carousel should react to keyboard events.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pause</code></td>
+<td style="text-align: left;">string or boolean</td>
+<td style="text-align: left;"><code>hover</code></td>
+<td style="text-align: left;">Default is to pause cycling when the mouse cursor is over the carousel.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>ride</code></td>
+<td style="text-align: left;">string or boolean</td>
+<td style="text-align: left;"><code>carousel</code></td>
+<td style="text-align: left;">By default, the carousel is on autoplay.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>wrap</code></td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: left;"><code>true</code></td>
+<td style="text-align: left;">Continuous cycling by default, can be set to <code>false</code> for hard stops.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>touch</code></td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: left;"><code>true</code></td>
+<td style="text-align: left;">Can be set to <code>false</code> to disable swiping on touchscreen devices.</td>
+</tr>
+</tbody>
+</table>
+<p>Example block carousel with all options explicitly specified. Besides <code>id</code> and <code>interval</code> all options are set to default.</p>
+<pre><code>{{&lt; blockcarousel ../header-images/unsplash-1.jpg ../header-images/unsplash-2.jpg id="block_carousel1" interval=1000 keyboard=true pause=hover ride=carousel wrap=true touch=true &gt;}}</code></pre>
+<p></p><div id="block_carousel1" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1000" data-bs-keyboard="true" data-bs-pause="hover" data-bs-wrap="true" data-bs-touch="true">  <div class="carousel-inner"><div class="carousel-item active">  <img src="../header-images/unsplash-1.jpg" class="d-block w-100"></div><div class="carousel-item">  <img src="../header-images/unsplash-2.jpg" class="d-block w-100"></div>  </div>  <button class="carousel-control-prev" type="button" data-bs-target="#block_carousel1" data-bs-slide="prev">    <span class="carousel-control-prev-icon" aria-hidden="true"></span>    <span class="visually-hidden">Previous</span>  </button>  <button class="carousel-control-next" type="button" data-bs-target="#block_carousel1" data-bs-slide="next">    <span class="carousel-control-next-icon" aria-hidden="true"></span>    <span class="visually-hidden">Next</span>  </button></div><p></p>
 
 
 </section>
