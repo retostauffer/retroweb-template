@@ -84,13 +84,12 @@ repository as well as cloning the quarto extension which contains the
 ```
 git clone https://github.com/retostauffer/rotorweb-template.git mywebsite
 cd mywebsite
-git submodule add https://github.com/retostauffer/rotorweb-ext.git _extensions/rotorweb
 ```
 
 When cloned, the extension can be installed and the page rendered.
 
 ```
-quarto install extension .
+quarto add retostauffer/rotorweb-ext
 quarto render
 ```
 

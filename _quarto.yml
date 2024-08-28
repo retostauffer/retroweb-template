@@ -54,7 +54,7 @@ resources:
   - header-images
 
 format:
-  rotorweb-html:
+  rotorweb-ext-html:
     date: 2022-08-17
 
 twitter-card:
