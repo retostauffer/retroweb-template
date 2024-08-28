@@ -93,6 +93,6 @@ quarto add retostauffer/rotorweb-ext
 quarto render
 ```
 
-The website will be rendered into `docs/`.
+The website will be rendered into `_site/`.
 
 
